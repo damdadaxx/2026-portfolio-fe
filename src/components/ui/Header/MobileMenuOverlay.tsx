@@ -70,7 +70,7 @@ export default function MobileMenuOverlay({ activeId, onClose }: MobileMenuOverl
           variants={itemVariants}
           className="font-display break-keep px-7.5 pt-15 text-[42px] leading-[1.05] uppercase"
         >
-          <Trans i18nKey="mobileMenu.title" components={{ br: <br /> }} />
+          <Trans t={t} i18nKey="mobileMenu.title" components={{ br: <br /> }} />
         </motion.p>
 
         <motion.div
