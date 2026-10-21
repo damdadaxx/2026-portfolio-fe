@@ -6,24 +6,24 @@ import { SOCIAL_LINKS } from '@/lib/constants/socials'
 import { cn } from '@/utils/cn'
 import { HOVER_UNDERLINE } from '@/utils/hoverUnderline'
 
-import KeywordBanner from './KeywordBanner'
+import KeywordBanner from '@/components/ui/KeywordBanner/KeywordBanner'
 
 export default function Footer() {
   const { t } = useTranslation()
 
   return (
-    <footer className="bg-cream">
+    <footer className="bg-cream mx-auto max-w-[1920px] overflow-x-hidden">
       <KeywordBanner />
 
-      <div className="flex flex-col gap-10 px-5 pt-12 md:flex-row md:items-start md:justify-between md:gap-0 md:px-15 md:pt-37.5">
-        <div className="flex flex-col items-start gap-2.5">
+      <div className="flex flex-col gap-10 px-5 pt-12 lg:flex-row lg:items-start lg:justify-between lg:gap-0 lg:px-[min(4vw,60px)] lg:pt-[min(10vw,150px)]">
+        <div className="flex min-w-0 flex-col items-start gap-2.5">
           <p className="text-lg font-medium">{t('footer.menuLabel')}</p>
           {NAV_ITEMS.map((item, index) => (
             <a
               key={item.id}
               href={`#${item.id}`}
               className={cn(
-                'flex w-fit items-center gap-2 text-[28px] leading-[1.3] tracking-[-0.56px] md:text-[40px]',
+                'flex w-fit items-center gap-2 text-[28px] leading-[1.3] tracking-[-0.56px] lg:text-[clamp(1.75rem,3.3vw,2.5rem)]',
                 HOVER_UNDERLINE,
               )}
             >
@@ -33,15 +33,16 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="flex flex-col items-start gap-2.5 whitespace-nowrap md:items-end">
+        <div className="flex min-w-0 flex-col items-start gap-2.5 whitespace-nowrap lg:items-end">
           <p className="text-lg font-medium">{t('footer.linksLabel')}</p>
           {SOCIAL_LINKS.map((social) => (
             <a
               key={social.label}
               href={social.href}
-              target='_blank'
+              target="_blank"
+              rel="noopener noreferrer"
               className={cn(
-                'inline-block w-fit text-2xl uppercase md:text-right md:text-[42px]',
+                'inline-block w-fit text-2xl uppercase lg:text-right lg:text-[clamp(1.75rem,3.5vw,2.625rem)]',
                 HOVER_UNDERLINE,
               )}
             >
@@ -51,8 +52,8 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="flex items-start justify-center pt-16 pb-8 md:pt-30 md:pb-10">
-        <p className="text-sm tracking-[-0.18px] uppercase md:text-lg">{t('footer.copyright')}</p>
+      <div className="flex items-start justify-center pt-16 pb-8 lg:pt-30 lg:pb-10">
+        <p className="text-sm tracking-[-0.18px] uppercase lg:text-lg">{t('footer.copyright')}</p>
       </div>
     </footer>
   )
