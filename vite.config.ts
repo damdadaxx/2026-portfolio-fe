@@ -12,6 +12,10 @@ export default defineConfig({
     },
   },
   preview: {
-    allowedHosts: ['two026-portfolio-fe.onrender.com'],
+    allowedHosts: [
+      'two026-portfolio-fe.onrender.com',
+      'www.damdadaxx.com',
+      'damdadaxx.com',
+    ],
   },
 })
