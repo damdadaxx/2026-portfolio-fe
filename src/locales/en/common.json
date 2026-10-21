@@ -1,0 +1,26 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "title": "a Frontend Developer",
+    "description": "I build web experiences people enjoy using."
+  },
+  "about": {
+    "title": "About Me"
+  },
+  "skills": {
+    "title": "Skills"
+  },
+  "projects": {
+    "title": "Projects"
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Feel free to reach out anytime."
+  }
+}

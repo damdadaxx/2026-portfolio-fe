@@ -1,0 +1,26 @@
+{
+  "nav": {
+    "about": "소개",
+    "skills": "스킬",
+    "projects": "프로젝트",
+    "contact": "연락처"
+  },
+  "hero": {
+    "greeting": "안녕하세요,",
+    "title": "프론트엔드 개발자입니다",
+    "description": "사용자 경험을 생각하는 웹을 만듭니다."
+  },
+  "about": {
+    "title": "About Me"
+  },
+  "skills": {
+    "title": "Skills"
+  },
+  "projects": {
+    "title": "Projects"
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "언제든 편하게 연락 주세요."
+  }
+}
