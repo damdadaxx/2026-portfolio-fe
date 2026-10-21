@@ -11,4 +11,7 @@ export default defineConfig({
       '@': path.resolve(import.meta.dirname, './src'),
     },
   },
+  preview: {
+    allowedHosts: ['two026-portfolio-fe.onrender.com'],
+  },
 })
