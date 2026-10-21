@@ -1,8 +1,8 @@
 {
   "nav": {
-    "about": "About",
-    "skills": "Skills",
-    "projects": "Projects",
+    "about": "About me",
+    "career": "Career",
+    "project": "Project",
     "contact": "Contact"
   },
   "hero": {
@@ -22,5 +22,17 @@
   "contact": {
     "title": "Contact",
     "description": "Feel free to reach out anytime."
+  },
+  "footer": {
+    "menuLabel": "Menu",
+    "linksLabel": "Find me elsewhere",
+    "copyright": "© Copyright 2025 HYOJU"
+  },
+  "mobileMenu": {
+    "title": "Ready<br /> to dive <br /> in?",
+    "menuLabel": "Menu",
+    "socialsLabel": "Socials",
+    "open": "MENU",
+    "close": "CLOSE"
   }
 }

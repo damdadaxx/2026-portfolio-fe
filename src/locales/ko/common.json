@@ -1,9 +1,9 @@
 {
   "nav": {
     "about": "소개",
-    "skills": "스킬",
-    "projects": "프로젝트",
-    "contact": "연락처"
+    "career": "경력",
+    "project": "프로젝트",
+    "contact": "연락하기"
   },
   "hero": {
     "greeting": "안녕하세요,",
@@ -22,5 +22,17 @@
   "contact": {
     "title": "Contact",
     "description": "언제든 편하게 연락 주세요."
+  },
+  "footer": {
+    "menuLabel": "메뉴",
+    "linksLabel": "다른 곳에서도 만나요",
+    "copyright": "© Copyright 2025 HYOJU"
+  },
+  "mobileMenu": {
+    "title": "Ready to dive in?",
+    "menuLabel": "Menu",
+    "socialsLabel": "Socials",
+    "open": "MENU",
+    "close": "CLOSE"
   }
 }

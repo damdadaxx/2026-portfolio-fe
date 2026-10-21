@@ -1,9 +1,33 @@
 @import 'tailwindcss';
 
+@theme {
+  --color-brand: #174dc4;
+  --color-cream: #f2f1e4;
+  --color-glass: rgba(255, 255, 255, 0.1);
+  --font-display: 'Oi', cursive;
+  --font-sans: 'Inter', 'Noto Sans KR', system-ui, sans-serif;
+}
+
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
 }
 
 body {
   margin: 0;
+  background-color: var(--color-cream);
+  color: var(--color-brand);
+  font-family: var(--font-sans);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
 }
