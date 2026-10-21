@@ -6,22 +6,87 @@
     "contact": "연락하기"
   },
   "hero": {
-    "greeting": "안녕하세요,",
-    "title": "프론트엔드 개발자입니다",
-    "description": "사용자 경험을 생각하는 웹을 만듭니다."
+    "statement": "UI/UX 디자인과 프론트엔드 경험을 바탕으로, <u>API부터 화면까지</u> 직접 만들고 <u>측정으로 개선을</u> 확인하는 풀스택 개발자입니다."
+  },
+  "common": {
+    "viewMore": "더 보기"
   },
   "about": {
-    "title": "About Me"
+    "title": "제 생각이 궁금하다면",
+    "statements": [
+      {
+        "id": "uiux",
+        "label": "UI/UX",
+        "text": "UI/UX 디자이너로 시작해, 사용자가 보는 화면의 디테일을 끝까지 챙깁니다"
+      },
+      {
+        "id": "fullstack",
+        "label": "풀스택",
+        "text": "Node.js·Express·Prisma로 API를 설계하고 Next.js 화면까지 직접 연결합니다"
+      },
+      {
+        "id": "integrity",
+        "label": "정합성",
+        "text": "트랜잭션과 조건부 업데이트로 동시성 문제와 데이터 정합성을 지킵니다"
+      },
+      {
+        "id": "measurement",
+        "label": "측정",
+        "text": "Lighthouse 54.5 → 87.3점처럼, 개선 효과를 숫자로 확인하며 일합니다"
+      },
+      {
+        "id": "leadership",
+        "label": "리더십",
+        "text": "팀장으로 스크럼과 FE/BE 의존성을 조율하고, PR 리뷰와 발표를 맡아 왔습니다"
+      }
+    ]
   },
-  "skills": {
-    "title": "Skills"
+  "career": {
+    "title": "경력",
+    "summary": "UI/UX 디자인과 프론트엔드 개발 경력 2년 5개월을 바탕으로, 코드잇 풀스택 부트캠프에서 백엔드, 실시간 통신, 데이터 정합성까지 역량을 넓힌 풀스택 개발자입니다. 실시간 데이터 처리와 DB 트랜잭션을 중심으로 API부터 화면까지 직접 구현해 왔고, 측정으로 개선 효과를 확인하는 방식으로 일합니다.",
+    "details": [
+      {
+        "id": "backend",
+        "label": "백엔드",
+        "lines": ["Node.js, Express, Prisma, PostgreSQL, Supabase (Realtime·Storage·RLS), JWT, Zod, SSE"]
+      },
+      {
+        "id": "frontend",
+        "label": "프론트엔드",
+        "lines": ["TypeScript, React, Next.js (App Router), TanStack Query, Zustand, Tailwind CSS, styled-components, Three.js"]
+      },
+      {
+        "id": "experience",
+        "label": "경력 · 교육",
+        "lines": [
+          "리커너스 · Frontend Developer (2021.04 ~ 2023.09)",
+          "타임리 · UI/UX Designer (2018.11 ~ 2019.04)",
+          "코드잇 클라우드 기반 풀스택 엔지니어 부트캠프 (2026.03 ~ 2026.10)"
+        ]
+      },
+      {
+        "id": "tools",
+        "label": "학습 경험 · 도구",
+        "lines": [
+          "AWS, CI/CD (GitHub Actions), Redis, MongoDB, Jest·Supertest",
+          "Git/GitHub, Figma, Notion, Vercel, Render, Claude Code, Cursor"
+        ]
+      }
+    ]
   },
   "projects": {
-    "title": "Projects"
+    "title": "프로젝트",
+    "viewMore": "프로젝트 더 보기",
+    "viewProject": "프로젝트 보러가기"
   },
   "contact": {
-    "title": "Contact",
-    "description": "언제든 편하게 연락 주세요."
+    "title": "생각하고 계신 게 있나요?",
+    "description": "새로운 아이디어나 협업 제안, 작업에 대한 피드백까지 무엇이든 편하게 연락 주세요."
+  },
+  "promo": {
+    "alt": "무빙 프로젝트 소개",
+    "dismissToday": "오늘 하루 보지 않기",
+    "cta": "대표 프로젝트 '무빙' 보러가기"
   },
   "footer": {
     "menuLabel": "메뉴",

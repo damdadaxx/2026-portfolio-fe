@@ -22,7 +22,7 @@ export default function Header() {
   return (
     <>
       <header className="bg-glass fixed top-0 left-0 z-40 w-full backdrop-blur-[10px]">
-        <div className="relative flex h-17.5 items-center justify-between px-2.25 lg:h-25 lg:px-12.25">
+        <div className="relative mx-auto flex h-17.5 max-w-[1920px] items-center justify-between px-2.25 lg:h-25 lg:px-12.25">
           <a href="#hero" aria-label="Home">
             <Logo className="size-10 lg:size-16.5" />
           </a>

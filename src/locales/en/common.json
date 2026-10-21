@@ -6,22 +6,87 @@
     "contact": "Contact"
   },
   "hero": {
-    "greeting": "Hi, I'm",
-    "title": "a Frontend Developer",
-    "description": "I build web experiences people enjoy using."
+    "statement": "Grounded in UI/UX design and frontend experience, I build everything <u>from the API to the interface</u> and verify every improvement by <u>measuring it</u>."
+  },
+  "common": {
+    "viewMore": "View more"
   },
   "about": {
-    "title": "About Me"
+    "title": "If you're wondering what I think",
+    "statements": [
+      {
+        "id": "uiux",
+        "label": "UI/UX",
+        "text": "Started out as a UI/UX designer, I care about every detail users see"
+      },
+      {
+        "id": "fullstack",
+        "label": "Full-stack",
+        "text": "Designing APIs with Node.js, Express and Prisma, and wiring them into Next.js interfaces"
+      },
+      {
+        "id": "integrity",
+        "label": "Integrity",
+        "text": "Guarding data integrity and concurrency with transactions and conditional updates"
+      },
+      {
+        "id": "measurement",
+        "label": "Measurement",
+        "text": "Proving improvements in numbers, like lifting Lighthouse from 54.5 to 87.3"
+      },
+      {
+        "id": "leadership",
+        "label": "Leadership",
+        "text": "Leading teams through scrums, FE/BE dependencies, PR reviews and presentations"
+      }
+    ]
   },
-  "skills": {
-    "title": "Skills"
+  "career": {
+    "title": "Career",
+    "summary": "Full-stack developer with 2 years and 5 months of UI/UX design and frontend experience, who expanded into backend, real-time communication and data integrity through Codeit's full-stack bootcamp. Focused on real-time data and DB transactions, I build from the API to the interface and measure the impact of every improvement.",
+    "details": [
+      {
+        "id": "backend",
+        "label": "Backend",
+        "lines": ["Node.js, Express, Prisma, PostgreSQL, Supabase (Realtime·Storage·RLS), JWT, Zod, SSE"]
+      },
+      {
+        "id": "frontend",
+        "label": "Frontend",
+        "lines": ["TypeScript, React, Next.js (App Router), TanStack Query, Zustand, Tailwind CSS, styled-components, Three.js"]
+      },
+      {
+        "id": "experience",
+        "label": "Experience · Education",
+        "lines": [
+          "리커너스 · Frontend Developer (2021.04 ~ 2023.09)",
+          "타임리 · UI/UX Designer (2018.11 ~ 2019.04)",
+          "Codeit Cloud Full-stack Engineer Bootcamp (2026.03 ~ 2026.10)"
+        ]
+      },
+      {
+        "id": "tools",
+        "label": "Learning · Tools",
+        "lines": [
+          "AWS, CI/CD (GitHub Actions), Redis, MongoDB, Jest·Supertest",
+          "Git/GitHub, Figma, Notion, Vercel, Render, Claude Code, Cursor"
+        ]
+      }
+    ]
   },
   "projects": {
-    "title": "Projects"
+    "title": "Project",
+    "viewMore": "View more projects",
+    "viewProject": "View project"
   },
   "contact": {
-    "title": "Contact",
-    "description": "Feel free to reach out anytime."
+    "title": "Have something in mind?",
+    "description": "Feel free to reach out — whether it's a new idea, a collaboration, or even just feedback on my work."
+  },
+  "promo": {
+    "alt": "Moving project showcase",
+    "dismissToday": "Don't show today",
+    "cta": "Explore the 'Moving' Project"
   },
   "footer": {
     "menuLabel": "Menu",
