@@ -6,7 +6,7 @@
     "contact": "Contact"
   },
   "hero": {
-    "statement": "Grounded in UI/UX design and frontend experience, I build everything <u>from the API to the interface</u> and verify every improvement by <u>measuring it</u>."
+    "statement": "A full-stack developer with 2.5 years of frontend experience, building everything from components to APIs and databases — and shipping it."
   },
   "common": {
     "viewMore": "View more"
@@ -48,12 +48,16 @@
       {
         "id": "backend",
         "label": "Backend",
-        "lines": ["Node.js, Express, Prisma, PostgreSQL, Supabase (Realtime·Storage·RLS), JWT, Zod, SSE"]
+        "lines": [
+          "Node.js, Express, Prisma, PostgreSQL, Supabase (Realtime·Storage·RLS), JWT, Zod, SSE"
+        ]
       },
       {
         "id": "frontend",
         "label": "Frontend",
-        "lines": ["TypeScript, React, Next.js (App Router), TanStack Query, Zustand, Tailwind CSS, styled-components, Three.js"]
+        "lines": [
+          "TypeScript, React, Next.js (App Router), TanStack Query, Zustand, Tailwind CSS, styled-components, Three.js"
+        ]
       },
       {
         "id": "experience",
@@ -80,18 +84,15 @@
     "viewProject": "View project"
   },
   "contact": {
-    "title": "Have something in mind?",
-    "description": "Feel free to reach out — whether it's a new idea, a collaboration, or even just feedback on my work."
-  },
-  "promo": {
-    "alt": "Moving project showcase",
-    "dismissToday": "Don't show today",
-    "cta": "Explore the 'Moving' Project"
+    "title": "Looking for<br />a great team",
+    "description": "Job offers and casual coffee chats are both welcome. Feel free to reach out by email.",
+    "copy": "Copy email address",
+    "copied": "Copied"
   },
   "footer": {
     "menuLabel": "Menu",
-    "linksLabel": "Find me elsewhere",
-    "copyright": "© Copyright 2025 HYOJU"
+    "linksLabel": "You can also find me on",
+    "copyright": "© Copyright 2026 HYOJU"
   },
   "mobileMenu": {
     "title": "Ready<br /> to dive <br /> in?",
@@ -99,5 +100,90 @@
     "socialsLabel": "Socials",
     "open": "MENU",
     "close": "CLOSE"
+  },
+  "featured": {
+    "badge": "Featured projects",
+    "lead": "Built end to end, proven by measurement",
+    "title": "Two projects",
+    "note": "Both are written up as case studies: problem → cause → fix → result.",
+    "imageLabel": "{{name}} — key screen",
+    "imageCaption": "Image area · 16:9",
+    "keyResults": "KEY RESULTS",
+    "caseStudy": "Read case study",
+    "items": [
+      {
+        "id": "moving",
+        "name": "Moving",
+        "meta": "Team project · Lead · FE/BE",
+        "desc": "Moving-quote matching with real-time 1:1 chat. I owned the notification and chat APIs through to the UI, and used measurement to find and fix performance bottlenecks and redundant chat refetches.",
+        "stack": "NEXT.JS · EXPRESS · PRISMA · SOCKET.IO",
+        "stats": [
+          {
+            "value": "65.0 → 95.4",
+            "label": "Desktop performance score"
+          },
+          {
+            "value": "15.6 → 6.3s",
+            "label": "Mobile LCP"
+          },
+          {
+            "value": "~120 → 1",
+            "label": "Refetches per message"
+          }
+        ]
+      },
+      {
+        "id": "k-test",
+        "name": "K-TEST",
+        "meta": "Team project · Sole frontend · Hackathon award",
+        "desc": "A Korean speaking test on job and safety topics for foreign workers. I built the entire test flow on my own — from identity verification and answering questions to the result report.",
+        "stack": "NEXT.JS · TYPESCRIPT · ZUSTAND · TANSTACK QUERY",
+        "stats": [
+          {
+            "value": "Excellence Award",
+            "label": "8th K-Digital Training Hackathon"
+          },
+          {
+            "value": "5MB → 1MB",
+            "label": "ID image resize threshold"
+          },
+          {
+            "value": "2 → 1",
+            "label": "Tab-switch violation events merged"
+          }
+        ]
+      }
+    ],
+    "viewAll": "See all projects"
+  },
+  "process": {
+    "title": "How I work",
+    "action": "More about me",
+    "items": [
+      {
+        "no": "01",
+        "lead": "Verify,",
+        "em": "don't guess",
+        "body": "I reproduce issues to find the cause, then measure after the fix to confirm it really got better."
+      },
+      {
+        "no": "02",
+        "lead": "Keep the team",
+        "em": "unblocked",
+        "body": "As a lead, I watch FE·BE dependencies first. As a teammate, I dig into blockers together."
+      },
+      {
+        "no": "03",
+        "lead": "From screen to data,",
+        "em": "see the whole flow",
+        "body": "Having worked from design to APIs and databases, I close the gaps from both the UI and the server side."
+      },
+      {
+        "no": "04",
+        "lead": "New places are",
+        "em": "chances to learn",
+        "body": "From designer to developer, from frontend to full-stack — I keep widening my range."
+      }
+    ]
   }
 }

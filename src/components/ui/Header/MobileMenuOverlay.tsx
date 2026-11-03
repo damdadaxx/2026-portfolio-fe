@@ -1,8 +1,9 @@
 import { motion, stagger, useReducedMotion, type Variants } from 'framer-motion'
 import { Trans, useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 
 import ghostFrontal from '@/assets/images/ghost-frontal.png'
-import { NAV_ITEMS } from '@/lib/constants/nav'
+import { isActive, NAV_ITEMS } from '@/lib/constants/nav'
 import { SOCIAL_LINKS } from '@/lib/constants/socials'
 import { cn } from '@/utils/cn'
 import { HOVER_UNDERLINE } from '@/utils/hoverUnderline'
@@ -12,7 +13,7 @@ import Logo from './Logo'
 import NavLink from './NavLink'
 
 type MobileMenuOverlayProps = {
-  activeId: string
+  pathname: string
   onClose: () => void
 }
 
@@ -28,7 +29,7 @@ const itemVariants: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: 'easeOut' } },
 }
 
-export default function MobileMenuOverlay({ activeId, onClose }: MobileMenuOverlayProps) {
+export default function MobileMenuOverlay({ pathname, onClose }: MobileMenuOverlayProps) {
   const { t } = useTranslation()
   const shouldReduceMotion = useReducedMotion()
 
@@ -51,9 +52,9 @@ export default function MobileMenuOverlay({ activeId, onClose }: MobileMenuOverl
           variants={itemVariants}
           className="flex h-17.5 items-center justify-between px-2.25"
         >
-          <a href="#hero" onClick={onClose} aria-label="Home">
+          <Link to="/" onClick={onClose} aria-label="Home">
             <Logo tone="beige" className="size-10" />
-          </a>
+          </Link>
           <div className="flex items-center gap-5 pr-2">
             <LangSwitch size="sm" tone="beige" />
             <button
@@ -91,10 +92,10 @@ export default function MobileMenuOverlay({ activeId, onClose }: MobileMenuOverl
             <div className="mt-1.5 flex flex-col items-end gap-1.5">
               {NAV_ITEMS.map((item) => (
                 <NavLink
-                  key={item.id}
-                  href={item.id}
+                  key={item.href}
+                  href={item.href}
                   tone="beige"
-                  active={activeId === item.id}
+                  active={isActive(item.href, pathname)}
                   onClick={onClose}
                   className="text-2xl"
                 >

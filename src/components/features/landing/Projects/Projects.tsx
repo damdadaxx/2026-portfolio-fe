@@ -41,7 +41,7 @@ export default function Projects() {
       viewport={SCROLL_REVEAL_VIEWPORT}
       transition={SCROLL_REVEAL_TRANSITION}
     >
-      <SectionTitle title={t('projects.title')} showAction={false} />
+      <SectionTitle title={t('projects.title')} />
 
       <motion.div
         className="mt-8 flex flex-col lg:mt-25"

@@ -1,7 +1,8 @@
 import { useTranslation } from 'react-i18next'
+import { Link, useLocation } from 'react-router-dom'
 
 import CloverIcon from '@/components/ui/CloverIcon'
-import { NAV_ITEMS } from '@/lib/constants/nav'
+import { isActive, NAV_ITEMS } from '@/lib/constants/nav'
 import { SOCIAL_LINKS } from '@/lib/constants/socials'
 import { cn } from '@/utils/cn'
 import { HOVER_UNDERLINE } from '@/utils/hoverUnderline'
@@ -10,39 +11,40 @@ import KeywordBanner from '@/components/ui/KeywordBanner/KeywordBanner'
 
 export default function Footer() {
   const { t } = useTranslation()
+  const { pathname } = useLocation()
 
   return (
     <footer className="bg-cream mx-auto max-w-[1920px] overflow-x-hidden">
       <KeywordBanner />
 
       <div className="flex flex-col gap-10 px-5 pt-12 lg:flex-row lg:items-start lg:justify-between lg:gap-0 lg:px-[min(4vw,60px)] lg:pt-[min(10vw,150px)]">
-        <div className="flex min-w-0 flex-col items-start gap-2.5">
-          <p className="text-lg font-medium">{t('footer.menuLabel')}</p>
-          {NAV_ITEMS.map((item, index) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
+        <div className="flex min-w-0 flex-col items-start gap-1.5 lg:gap-2.5">
+          <p className="text-sm uppercase lg:text-lg">{t('footer.menuLabel')}</p>
+          {NAV_ITEMS.map((item) => (
+            <Link
+              key={item.href}
+              to={item.href}
               className={cn(
-                'flex w-fit items-center gap-2 text-[28px] leading-[1.3] tracking-[-0.56px] lg:text-[clamp(1.75rem,3.3vw,2.5rem)]',
+                'flex w-fit items-center gap-2 text-2xl lg:uppercase lg:text-[clamp(1.75rem,2.2vw,2.625rem)]',
                 HOVER_UNDERLINE,
               )}
             >
-              {t(item.key)}
-              {index === 0 && <CloverIcon size={24} />}
-            </a>
+              {item.label}
+              {isActive(item.href, pathname) && <CloverIcon size={24} />}
+            </Link>
           ))}
         </div>
 
-        <div className="flex min-w-0 flex-col items-start gap-2.5 whitespace-nowrap lg:items-end">
-          <p className="text-lg font-medium">{t('footer.linksLabel')}</p>
-          {SOCIAL_LINKS.map((social) => (
+        <div className="flex min-w-0 flex-col items-start gap-1.5 whitespace-nowrap lg:gap-2.5 lg:items-end">
+          <p className="text-sm uppercase lg:text-lg">{t('footer.linksLabel')}</p>
+          {SOCIAL_LINKS.filter((social) => social.label !== 'CV').map((social) => (
             <a
               key={social.label}
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
-                'inline-block w-fit text-2xl uppercase lg:text-right lg:text-[clamp(1.75rem,3.5vw,2.625rem)]',
+                'inline-block w-fit text-2xl lg:text-right lg:uppercase lg:text-[clamp(1.75rem,2.2vw,2.625rem)]',
                 HOVER_UNDERLINE,
               )}
             >
