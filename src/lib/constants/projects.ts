@@ -1,5 +1,6 @@
 export type Project = {
   id: string
+  slug: string
   name: { ko: string; en: string }
   period: string
   tags: string[]
@@ -9,6 +10,7 @@ export type Project = {
 export const PROJECTS: Project[] = [
   {
     id: '001',
+    slug: 'moving',
     name: { ko: '무빙', en: 'Moving' },
     period: '2026.08 ~ 2026.10',
     tags: [
@@ -26,6 +28,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: '002',
+    slug: 'k-test',
     name: { ko: 'K-TEST', en: 'K-TEST' },
     period: '2026.06 ~ 2026.09',
     tags: ['Next.js', 'TypeScript', 'Zustand', 'TanStack Query', 'axios', 'MediaRecorder API'],
@@ -33,6 +36,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: '003',
+    slug: 'docthru',
     name: { ko: '독스루', en: 'Docthru' },
     period: '2026.07',
     tags: ['Next.js', 'React 19', 'TanStack Query', 'Tailwind CSS', 'Express', 'Prisma', 'PostgreSQL'],
@@ -40,6 +44,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: '004',
+    slug: 'forest-of-study',
     name: { ko: '공부의 숲', en: 'Forest of Study' },
     period: '2026.05 ~ 2026.06',
     tags: ['React', 'React Router', 'CSS Modules', 'Express', 'Prisma', 'PostgreSQL', 'Zod'],
@@ -47,6 +52,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: '005',
+    slug: 'minters',
     name: { ko: '민터스', en: 'Minters' },
     period: '2023.05 ~ 2023.09',
     tags: ['Next.js 13', 'React 18', 'TypeScript', 'TanStack Query', 'Zustand', 'Tailwind CSS'],

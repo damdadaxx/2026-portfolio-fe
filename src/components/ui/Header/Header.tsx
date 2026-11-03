@@ -7,6 +7,7 @@ import {
 } from 'framer-motion'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { Link, useLocation } from 'react-router-dom'
 
 import { isActive, NAV_ITEMS } from '@/lib/constants/nav'
 import { cn } from '@/utils/cn'
@@ -24,7 +25,7 @@ const SCROLL_TOLERANCE = 2
 export default function Header() {
   const { t } = useTranslation()
   const [open, setOpen] = useState(false)
-  const { pathname } = window.location
+  const { pathname } = useLocation()
   const shouldReduceMotion = useReducedMotion()
   const { scrollY } = useScroll()
   const [hidden, setHidden] = useState(false)
@@ -45,9 +46,9 @@ export default function Header() {
         onFocusCapture={() => setHidden(false)}
       >
         <div className="relative mx-auto flex h-17.5 max-w-[1920px] items-center justify-between px-2.25 lg:h-25 lg:px-12.25">
-          <a href="/" aria-label="Home">
+          <Link to="/" aria-label="Home">
             <Logo className="size-10 lg:size-16.5" />
-          </a>
+          </Link>
 
           <nav className="absolute top-1/2 left-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-20 lg:flex">
             {NAV_ITEMS.map((item) => (

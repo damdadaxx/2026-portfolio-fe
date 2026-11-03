@@ -1,8 +1,11 @@
 import { motion, type MotionValue } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
 import ArrowRightIcon from '@/components/ui/ArrowRightIcon'
 import { cn } from '@/utils/cn'
+
+const MotionLink = motion.create(Link)
 
 const EASE =
   'duration-[400ms] ease-[cubic-bezier(0.65,0,0.35,1)] motion-reduce:transition-none'
@@ -30,8 +33,8 @@ export default function ViewAllButton({
   const isKo = i18n.language === 'ko'
 
   return (
-    <motion.a
-      href={href}
+    <MotionLink
+      to={href}
       className={cn(
         'group bg-cream relative flex w-fit items-center overflow-hidden rounded-lg border bg-clip-padding',
         bordered ? 'border-brand' : 'border-transparent',
@@ -72,6 +75,6 @@ export default function ViewAllButton({
           )}
         />
       </span>
-    </motion.a>
+    </MotionLink>
   )
 }

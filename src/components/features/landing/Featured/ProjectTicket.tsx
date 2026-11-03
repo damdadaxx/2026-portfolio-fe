@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 
 import projectKtest from '@/assets/images/project-ktest.png'
 import projectMoving from '@/assets/images/project-moving.png'
@@ -59,12 +60,12 @@ export default function ProjectTicket({ item }: { item: TicketItem }) {
             </div>
           ))}
         </div>
-        <button
-          type="button"
-          className="bg-brand w-full cursor-pointer rounded-[10px] px-5 py-[18px] font-sans text-lg text-white lg:text-xl"
+        <Link
+          to={`/project/${item.id}`}
+          className="bg-brand w-full cursor-pointer rounded-[10px] px-5 py-[18px] text-center font-sans text-lg text-white lg:text-xl"
         >
           {t('featured.caseStudy')}
-        </button>
+        </Link>
       </div>
     </article>
   )

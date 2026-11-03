@@ -1,5 +1,6 @@
 import { motion, stagger, useReducedMotion, type Variants } from 'framer-motion'
 import { Trans, useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 
 import ghostFrontal from '@/assets/images/ghost-frontal.png'
 import { isActive, NAV_ITEMS } from '@/lib/constants/nav'
@@ -51,9 +52,9 @@ export default function MobileMenuOverlay({ pathname, onClose }: MobileMenuOverl
           variants={itemVariants}
           className="flex h-17.5 items-center justify-between px-2.25"
         >
-          <a href="/" onClick={onClose} aria-label="Home">
+          <Link to="/" onClick={onClose} aria-label="Home">
             <Logo tone="beige" className="size-10" />
-          </a>
+          </Link>
           <div className="flex items-center gap-5 pr-2">
             <LangSwitch size="sm" tone="beige" />
             <button

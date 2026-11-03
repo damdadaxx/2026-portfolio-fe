@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import { Link, useLocation } from 'react-router-dom'
 
 import CloverIcon from '@/components/ui/CloverIcon'
 import { isActive, NAV_ITEMS } from '@/lib/constants/nav'
@@ -10,7 +11,7 @@ import KeywordBanner from '@/components/ui/KeywordBanner/KeywordBanner'
 
 export default function Footer() {
   const { t } = useTranslation()
-  const { pathname } = window.location
+  const { pathname } = useLocation()
 
   return (
     <footer className="bg-cream mx-auto max-w-[1920px] overflow-x-hidden">
@@ -20,9 +21,9 @@ export default function Footer() {
         <div className="flex min-w-0 flex-col items-start gap-1.5 lg:gap-2.5">
           <p className="text-sm uppercase lg:text-lg">{t('footer.menuLabel')}</p>
           {NAV_ITEMS.map((item) => (
-            <a
+            <Link
               key={item.href}
-              href={item.href}
+              to={item.href}
               className={cn(
                 'flex w-fit items-center gap-2 text-2xl lg:uppercase lg:text-[clamp(1.75rem,2.2vw,2.625rem)]',
                 HOVER_UNDERLINE,
@@ -30,7 +31,7 @@ export default function Footer() {
             >
               {item.label}
               {isActive(item.href, pathname) && <CloverIcon size={24} />}
-            </a>
+            </Link>
           ))}
         </div>
 
