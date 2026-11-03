@@ -21,7 +21,7 @@ export default function NavLink({
 }: NavLinkProps) {
   return (
     <a
-      href={`#${href}`}
+      href={href}
       onClick={onClick}
       className={cn(
         'flex w-fit items-center gap-1.5 text-lg whitespace-nowrap uppercase',
