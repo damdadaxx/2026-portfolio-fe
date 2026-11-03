@@ -9,6 +9,8 @@
   --font-display: 'Oi', cursive;
   --font-display-ko: 'Gasoek One', cursive;
   --font-danfo: 'Danfo', cursive;
+  --breakpoint-wide: 94rem;
+  --font-ko: 'Noto Sans KR', system-ui, sans-serif;
   --font-sans: 'Inter', 'Noto Sans KR', system-ui, sans-serif;
 }
 
