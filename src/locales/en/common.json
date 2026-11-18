@@ -687,5 +687,114 @@
         "desc": "Moving quote matching + real-time 1:1 chat"
       }
     }
+  },
+  "aboutPage": {
+    "intro": {
+      "title": "About",
+      "lead": "With 2 years 6 months of frontend experience and a full-stack bootcamp behind me, I'm a full-stack developer who builds everything from component design to APIs and DBs, and takes responsibility through deployment.",
+      "body": "I started as a UI/UX designer and became a developer because I wanted to know how screens actually work. As a team lead I watch the schedule and the FE/BE dependencies; as a teammate I trace a problem's cause all the way down.",
+      "github": "GitHub"
+    },
+    "career": {
+      "title": "Career log",
+      "items": [
+        {
+          "date": "2026.03 — 10",
+          "type": "feat",
+          "major": true,
+          "head": true,
+          "title": "Codeit Full-stack Bootcamp",
+          "desc": "Moving (FE/BE team lead), K-TEST (solo FE, hackathon award), Docthru and Forest of Study. I didn't stop at building features; I followed through on measurement and edge cases."
+        },
+        {
+          "date": "2025.07 — 2026.02",
+          "type": "chore",
+          "title": "IELTS study group leader",
+          "desc": "Ran a study group and earned an IELTS 6.5. I got into the habit of reading official English docs without getting stuck."
+        },
+        {
+          "date": "2023.11 — 2025.07",
+          "type": "chore",
+          "title": "Working holiday in the UK",
+          "desc": "Managed work and daily life on my own in an unfamiliar place, and learned to ask quickly and pick things up fast."
+        },
+        {
+          "date": "2021.04 — 2023.09",
+          "type": "feat",
+          "major": true,
+          "title": "Reconers · Frontend Developer",
+          "desc": "Published and developed over 100 responsive sites, shopping malls and apps. Took charge of live services like Minters, building 2 years 6 months of hands-on experience."
+        },
+        {
+          "date": "2020",
+          "type": "feat",
+          "title": "Ezen Academy · Frontend course",
+          "desc": "Relearned HTML, CSS and JavaScript from the ground up and turned from designer toward developer."
+        },
+        {
+          "date": "2018.11 — 2019.04",
+          "type": "design",
+          "title": "Timely · UI/UX Designer",
+          "desc": "Designing screens made me start wondering how they actually work. I also did three freelance online exhibitions for Daegu Arts University around then."
+        },
+        {
+          "date": "2017.02 — 2018.01",
+          "type": "init",
+          "title": "Co-founded Special Dress",
+          "desc": "After graduating in Fashion Design at Yeungnam University, I ran my own brand and, for the first time, was responsible for what actually reaches the user."
+        }
+      ]
+    },
+    "skills": {
+      "title": "Tech stack"
+    },
+    "more": {
+      "education": {
+        "title": "Education",
+        "items": [
+          {
+            "date": "2026.03 — 10",
+            "text": "Codeit Full-stack Bootcamp"
+          },
+          {
+            "date": "2020",
+            "text": "Ezen Academy Frontend course"
+          },
+          {
+            "date": "2018",
+            "text": "Eum Computer Academy Web design"
+          },
+          {
+            "date": "2011 — 2017",
+            "text": "Yeungnam University, Fashion Design (3.72 / 4.5)"
+          }
+        ]
+      },
+      "awards": {
+        "title": "Awards · Certifications",
+        "items": [
+          {
+            "date": "2026.09",
+            "text": "8th K-Digital Training Hackathon, Encouragement Prize"
+          },
+          {
+            "date": "2026.06",
+            "text": "Engineer Information Processing, written exam passed"
+          },
+          {
+            "date": "2026.02",
+            "text": "IELTS 6.5"
+          },
+          {
+            "date": "2018.06",
+            "text": "Web Design Technician"
+          },
+          {
+            "date": "2018.02",
+            "text": "Korean History Test, Level 1"
+          }
+        ]
+      }
+    }
   }
 }
