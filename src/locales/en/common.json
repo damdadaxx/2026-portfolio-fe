@@ -6,7 +6,7 @@
     "contact": "Contact"
   },
   "hero": {
-    "statement": "A full-stack developer with 2.5 years of frontend experience, building everything from components to APIs and databases — and shipping it."
+    "statement": "A full-stack developer with 2.5 years of frontend experience, <br />building everything from components to APIs and databases — and shipping it."
   },
   "common": {
     "viewMore": "View more"
@@ -95,7 +95,7 @@
     "copyright": "© Copyright 2026 HYOJU"
   },
   "mobileMenu": {
-    "title": "Ready<br /> to dive <br /> in?",
+    "title": "Where<br />to<br />next?",
     "menuLabel": "Menu",
     "socialsLabel": "Socials",
     "open": "MENU",
@@ -105,7 +105,7 @@
     "badge": "Featured projects",
     "lead": "Built end to end, proven by measurement",
     "title": "Two projects",
-    "note": "Both are written up as case studies: problem → cause → fix → result.",
+    "note": "Both are written up as case studies:<br />problem → cause → fix → result.",
     "imageLabel": "{{name}} — key screen",
     "imageCaption": "Image area · 16:9",
     "keyResults": "KEY RESULTS",
