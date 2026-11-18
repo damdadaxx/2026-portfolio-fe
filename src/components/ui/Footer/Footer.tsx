@@ -25,7 +25,7 @@ export default function Footer() {
               key={item.href}
               to={item.href}
               className={cn(
-                'flex w-fit items-center gap-2 text-2xl lg:uppercase lg:text-[clamp(1.75rem,2.2vw,2.625rem)]',
+                'flex w-fit items-center gap-2 text-2xl uppercase lg:text-[clamp(1.75rem,2.2vw,2.625rem)]',
                 HOVER_UNDERLINE,
               )}
             >
@@ -44,7 +44,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
-                'inline-block w-fit text-2xl lg:text-right lg:uppercase lg:text-[clamp(1.75rem,2.2vw,2.625rem)]',
+                'inline-block w-fit text-2xl uppercase lg:text-right lg:text-[clamp(1.75rem,2.2vw,2.625rem)]',
                 HOVER_UNDERLINE,
               )}
             >
