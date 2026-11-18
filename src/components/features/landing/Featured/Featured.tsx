@@ -74,7 +74,11 @@ function ScrollTicket({ item, index }: { item: TicketItem; index: number }) {
   })
 
   return (
-    <motion.div ref={ref} style={{ rotate }} className="w-full max-w-175 min-w-0 flex-1">
+    <motion.div
+      ref={ref}
+      style={{ rotate }}
+      className="flex w-full max-w-175 min-w-0 flex-1"
+    >
       <FlipTicket item={item} flipped={reachedCenter} delay={index * FLIP_STAGGER} />
     </motion.div>
   )

@@ -209,7 +209,7 @@
         "name": "Moving",
         "meta": "Team project · Lead · FE/BE",
         "desc": "Moving-quote matching with real-time 1:1 chat. I owned the notification and chat APIs through to the UI, and used measurement to find and fix performance bottlenecks and redundant chat refetches.",
-        "stack": "NEXT.JS · EXPRESS · PRISMA · SOCKET.IO",
+        "stack": "NEXT.JS · EXPRESS · PRISMA · SOCKET.IO · SSE · REACT · TYPESCRIPT · TANSTACK QUERY · ZOD · TAILWIND",
         "stats": [
           {
             "value": "65.0 → 95.4",
@@ -230,7 +230,7 @@
         "name": "K-TEST",
         "meta": "Team project · Sole frontend · Hackathon award",
         "desc": "A Korean speaking test on job and safety topics for foreign workers. I built the entire test flow on my own — from identity verification and answering questions to the result report.",
-        "stack": "NEXT.JS · TYPESCRIPT · ZUSTAND · TANSTACK QUERY",
+        "stack": "NEXT.JS · TYPESCRIPT · ZUSTAND · TANSTACK QUERY · TAILWIND",
         "stats": [
           {
             "value": "Excellence Award",

@@ -23,20 +23,32 @@ type FlipTicketProps = {
   className?: string
 }
 
-export default function FlipTicket({ item, flipped, delay = 0, className }: FlipTicketProps) {
+export default function FlipTicket({
+  item,
+  flipped,
+  delay = 0,
+  className,
+}: FlipTicketProps) {
   const shouldReduceMotion = useReducedMotion()
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { amount: 0.5, once: true })
   const isFlipped = shouldReduceMotion ? true : (flipped ?? inView)
-  const back = TICKET_BACK[item.id] ?? { code: 'HYOJU/PRJ', title: item.name.toUpperCase() }
+  const back = TICKET_BACK[item.id] ?? {
+    code: 'HYOJU/PRJ',
+    title: item.name.toUpperCase(),
+  }
 
   return (
-    <div ref={ref} className={cn('perspective-[2000px]', className)}>
+    <div ref={ref} className={cn('h-full perspective-[2000px]', className)}>
       <motion.div
-        className="grid grid-cols-[minmax(0,1fr)] transform-3d"
+        className="grid h-full grid-cols-[minmax(0,1fr)] transform-3d"
         initial={false}
         animate={{ rotateY: isFlipped ? 180 : 0 }}
-        transition={{ duration: shouldReduceMotion ? 0 : FLIP_DURATION, ease: FLIP_EASE, delay }}
+        transition={{
+          duration: shouldReduceMotion ? 0 : FLIP_DURATION,
+          ease: FLIP_EASE,
+          delay,
+        }}
       >
         <div className="col-start-1 row-start-1 backface-hidden">
           <ProjectTicketBack code={back.code} title={back.title} />

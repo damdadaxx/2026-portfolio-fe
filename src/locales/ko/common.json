@@ -209,7 +209,7 @@
         "name": "무빙",
         "meta": "팀 프로젝트 · 팀장 · FE/BE",
         "desc": "이사 견적 매칭과 실시간 1:1 채팅. 알림·채팅 API부터 화면까지 맡아, 성능 병목과 채팅 재조회 문제를 측정으로 찾아 개선했습니다.",
-        "stack": "NEXT.JS · EXPRESS · PRISMA · SOCKET.IO",
+        "stack": "NEXT.JS · EXPRESS · PRISMA · SOCKET.IO · SSE · REACT · TYPESCRIPT · TANSTACK QUERY · ZOD · TAILWIND",
         "stats": [
           {
             "value": "65.0 → 95.4",
@@ -230,7 +230,7 @@
         "name": "K-TEST",
         "meta": "팀 프로젝트 · 프론트엔드 단독 · 해커톤 장려상",
         "desc": "외국인 근로자 직무·안전 한국어 말하기 시험. 본인 인증부터 문항 풀이, 결과 리포트까지 응시 흐름 전체를 혼자 구현했습니다.",
-        "stack": "NEXT.JS · TYPESCRIPT · ZUSTAND · TANSTACK QUERY",
+        "stack": "NEXT.JS · TYPESCRIPT · ZUSTAND · TANSTACK QUERY · TAILWIND",
         "stats": [
           {
             "value": "장려상",

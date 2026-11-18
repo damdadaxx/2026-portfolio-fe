@@ -32,8 +32,8 @@ export default function ProjectTicket({ item }: { item: TicketItem }) {
     (i18n.language !== 'ko' && TICKET_IMAGE_EN[item.id]) || TICKET_IMAGE[item.id]
 
   return (
-    <article className="font-ko text-brand flex w-full flex-col">
-      <div className="bg-cream flex flex-col gap-3.5 rounded-t-3xl p-7">
+    <article className="font-ko text-brand flex h-full w-full flex-col">
+      <div className="bg-cream flex flex-1 flex-col gap-3.5 rounded-t-3xl p-7">
         <img
           src={image}
           alt={t('featured.imageLabel', { name: item.name })}
@@ -59,11 +59,11 @@ export default function ProjectTicket({ item }: { item: TicketItem }) {
         <img src={ticketNotch} alt="" className="absolute top-0 -right-3 size-6" />
       </div>
 
-      <div className="bg-cream flex flex-col gap-[18px] rounded-b-3xl p-7">
+      <div className="bg-cream flex flex-col gap-[18px] rounded-b-3xl p-7 wide:h-[264px]">
         <p className="font-sans text-[14px] tracking-[1.12px] uppercase">
           {t('featured.keyResults')}
         </p>
-        <div className="flex flex-col gap-2 lg:flex-row lg:gap-5">
+        <div className="flex flex-col gap-2 lg:flex-row lg:gap-5 wide:flex-1">
           {item.stats.map((stat) => (
             <div
               key={stat.label}

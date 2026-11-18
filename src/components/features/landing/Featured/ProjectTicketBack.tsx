@@ -23,13 +23,17 @@ export default function ProjectTicketBack({ code, title }: ProjectTicketBackProp
         </div>
 
         <div className="flex items-end justify-between">
-          <p className="font-display text-[40px] leading-none whitespace-nowrap sm:text-[56px] lg:text-[80px]">{title}</p>
+          <p className="font-display text-[40px] leading-none whitespace-nowrap sm:text-[56px] lg:text-[80px]">
+            {title}
+          </p>
           <img src={diamond} alt="" className="size-9" />
         </div>
 
         <div className="flex items-center justify-end gap-3">
           <img src={tearArrow} alt="" className="h-2.5 w-[22px]" />
-          <p className="text-[13px] tracking-[1.04px] whitespace-nowrap">TEAR ALONG LINE</p>
+          <p className="text-[13px] tracking-[1.04px] whitespace-nowrap">
+            TEAR ALONG LINE
+          </p>
           <img src={tearArrow} alt="" className="h-2.5 w-[22px] -scale-x-100" />
         </div>
       </div>
