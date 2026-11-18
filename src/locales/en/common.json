@@ -278,5 +278,251 @@
         "body": "From designer to developer, from frontend to full-stack — I keep widening my range."
       }
     ]
+  },
+  "caseStudy": {
+    "ui": {
+      "back": "← All projects",
+      "next": "Next project",
+      "nextAria": "Go to next project",
+      "watchVideo": "Watch video",
+      "videoStatus": "Autoplaying · pauses when out of view"
+    },
+    "moving": {
+      "chips": [
+        "Team project",
+        "Codeit bootcamp",
+        "Full-stack"
+      ],
+      "title": "Moving",
+      "oneLiner": [
+        "A quote-matching service that connects moving customers and movers,",
+        "then links them through real-time 1:1 chat once a quote is confirmed"
+      ],
+      "stats": [
+        {
+          "label": "Period",
+          "value": "7 weeks",
+          "sub": "2026.08 – 2026.10"
+        },
+        {
+          "label": "Role",
+          "value": "Team lead",
+          "sub": "FE lead · covered both FE and BE"
+        },
+        {
+          "label": "Team",
+          "value": "6 people",
+          "sub": "Codeit bootcamp team project"
+        }
+      ],
+      "stack": [
+        "Next.js",
+        "TypeScript",
+        "TanStack Query",
+        "Express",
+        "Prisma",
+        "Socket.IO",
+        "SSE",
+        "React",
+        "Zod",
+        "Tailwind"
+      ],
+      "links": {
+        "service": "Visit service",
+        "githubFe": "GitHub FE",
+        "githubBe": "GitHub BE"
+      },
+      "sections": {
+        "intro": "Service overview",
+        "scope": "Scope of work",
+        "problems": "Problem solving",
+        "performance": "Performance",
+        "retro": "Retrospective"
+      },
+      "intro": {
+        "body": "A customer requests quotes with their moving conditions, and movers whose service area and type match send quotes back. The customer compares and confirms one; after that come the deposit payment and 1:1 chat, and once the move is done, the balance payment and a review.",
+        "screens": [
+          "Customer · Request a quote",
+          "Mover · Send a quote",
+          "1:1 chat after confirmation"
+        ]
+      },
+      "scope": [
+        {
+          "title": "Screens",
+          "items": [
+            "Designed shared components (Header, Toast, Skeleton, etc.)",
+            "Landing, mover detail and my page",
+            "Pending, received and confirmed quote details",
+            "Header notification dropdown and 1:1 chat screen"
+          ]
+        },
+        {
+          "title": "API",
+          "items": [
+            "Notification API (REST + real-time delivery over SSE)",
+            "Confirmed-quote chat API (Socket.IO, read receipts)",
+            "Moved chat message storage to the main DB and S3"
+          ]
+        },
+        {
+          "title": "Structure · Quality",
+          "items": [
+            "Next.js App Router · TypeScript strict setup",
+            "Domain-based folder structure and refactoring",
+            "Lighthouse-based performance and accessibility improvements",
+            "Sitemap · robots.txt · GA consent banner"
+          ]
+        }
+      ],
+      "problemLabels": [
+        "Problem",
+        "Cause",
+        "Fix",
+        "Result"
+      ],
+      "problems": [
+        {
+          "tags": [
+            "Backend",
+            "SSE",
+            "Transaction"
+          ],
+          "title": "Ghost notifications that said a failed quote had arrived",
+          "problem": "The quote registration API failed with 409/500, yet the other party's screen showed a \"Your quote has arrived\" notification, and tapping it led to a 404.",
+          "cause": "SSE writes to the socket immediately, regardless of whether the transaction commits. Because the notification was created and sent inside the transaction, a later rollback left it on screen but not in the DB.",
+          "fix": "I split the notification API into create and publishCreated so that saving happens inside the same transaction and sending happens only after the commit. The same approach was applied to targeted quotes and quote status changes.",
+          "result": "Rolled-back quotes no longer send notifications. \"Send only on success, never on a unique-constraint violation\" is pinned down with unit tests."
+        },
+        {
+          "tags": [
+            "Frontend",
+            "Real-time chat",
+            "Cache"
+          ],
+          "title": "About 120 refetches for every single message received",
+          "problem": "Every incoming chat message triggered about 120 refetches.",
+          "cause": "Each Realtime event reloaded the whole chat room list (rooms) and the message pages.",
+          "fix": "I updated the cache directly from the event payload and put a 300ms debounce on the remaining refetches.",
+          "result": "Refetches per received message dropped from about 120 to at most 1."
+        },
+        {
+          "tags": [
+            "Full-stack",
+            "Socket.IO",
+            "Architecture change"
+          ],
+          "title": "Why we moved real-time chat from Supabase Realtime to Socket.IO",
+          "problem": "We first built chat quickly on Supabase Realtime without a separate socket server, but limits showed up in operation.",
+          "cause": "We had to manage the main DB and Supabase together, the free plan had event limits, and interactions that aren't stored in the DB, like a typing indicator, were hard to handle.",
+          "fix": "In the second iteration I switched to Socket.IO, consolidated messages into the single main DB, and stored chat images in S3.",
+          "result": "DB management became a single concern, and we could add chat UX such as a typing indicator."
+        },
+        {
+          "tags": [
+            "Frontend",
+            "Performance"
+          ],
+          "title": "An LCP stretched by late-starting image requests",
+          "problem": "Lighthouse showed long LCP on several pages, and even after cutting image and font sizes, some pages barely improved.",
+          "cause": "The shared ProfileImage could not receive a priority-loading option, so even the first image at the top of the screen was lazy-loaded and its request started late.",
+          "fix": "I converted 8 static images to WebP (3.62MB → 169KB) and kept only the glyphs Pretendard actually uses (2.06MB → 171KB). I also added a priority prop to ProfileImage and applied it only to the first card in the list.",
+          "result": "Mobile performance went from 43.5 to 78.8 and desktop from 65.0 to 95.4. LCP dropped from 15.62s to 6.30s on mobile and from 2.85s to 1.37s on desktop."
+        },
+        {
+          "tags": [
+            "Frontend",
+            "Real-time chat"
+          ],
+          "title": "Auto-scroll and read receipts stopping in long conversations",
+          "problem": "In chat rooms with many messages, read receipts and auto-scroll occasionally didn't run even when a new message arrived.",
+          "cause": "New messages were detected by messages.length. Because pages of 10 are cached, the array length could stay the same even when a new message arrived.",
+          "fix": "I changed read receipts and scrolling to trigger on the last message ID instead of the array length.",
+          "result": "The same symptom hasn't been reported since, and the latest message is detected regardless of how many messages there are."
+        }
+      ],
+      "performance": {
+        "lead": "I measured 37 page and device pairs before and after the improvements. Figures are shown per device.",
+        "head": [
+          "Device",
+          "Pairs",
+          "Performance (before → after)",
+          "LCP (before → after)",
+          "Accessibility (before → after)"
+        ],
+        "rows": [
+          [
+            "Desktop",
+            "19",
+            "65.0 → 95.4 (+46.7%)",
+            "2.85s → 1.37s (−51.7%)",
+            "93.9 → 95.0"
+          ],
+          [
+            "Mobile",
+            "18",
+            "43.5 → 78.8 (+81.2%)",
+            "15.62s → 6.30s (−59.7%)",
+            "93.8 → 94.8"
+          ]
+        ],
+        "conditions": {
+          "title": "Measurement conditions",
+          "rows": [
+            {
+              "label": "Tools",
+              "value": "Lighthouse 13.4.1 · Chrome 155 (macOS) · simulated throttling"
+            },
+            {
+              "label": "Desktop",
+              "value": "RTT 40ms · 10Mbps · no CPU throttling"
+            },
+            {
+              "label": "Mobile",
+              "value": "RTT 150ms · about 1.6Mbps · 4x CPU slowdown"
+            }
+          ]
+        },
+        "note": "The screens that changed most are the mover's sent-quote detail (desktop 39 → 100, mobile 27 → 85) and the sent-quote list (desktop 41 → 100, mobile 31 → 84).",
+        "captures": {
+          "before": "Before",
+          "after": "After",
+          "desktop": "Desktop",
+          "mobile": "Mobile",
+          "score": "Performance"
+        },
+        "captionScores": {
+          "desktop": [
+            39,
+            100
+          ],
+          "mobile": [
+            27,
+            85
+          ]
+        }
+      },
+      "retro": [
+        {
+          "title": "What I learned",
+          "paragraphs": [
+            "Real-time delivery is a side effect outside the transaction, so it isn't rolled back. Events that leave the system have to wait until after the commit.",
+            "Even small images lengthen LCP if their request starts late. Give priority only to the actual LCP element."
+          ]
+        },
+        {
+          "title": "Next steps",
+          "paragraphs": [
+            "Mobile LCP still has room to improve at an average of 6.30s. I plan to render the first data earlier with server prefetch and HydrationBoundary.",
+            "SSE connections live in memory, so this assumes a single server. Scaling out would require Redis pub/sub."
+          ]
+        }
+      ],
+      "next": {
+        "slug": "k-test",
+        "name": "K-TEST",
+        "desc": "A Korean speaking test for foreign workers"
+      }
+    }
   }
 }
