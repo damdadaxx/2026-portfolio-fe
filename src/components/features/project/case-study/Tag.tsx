@@ -12,7 +12,7 @@ export default function Tag({
     <span
       className={cn(
         'border-brand flex items-center rounded-lg border font-sans whitespace-nowrap',
-        size === 'md' ? 'h-8 px-2 text-lg' : 'h-6 px-1.5 text-sm',
+        size === 'md' ? 'h-8 px-2 text-sm lg:text-lg' : 'h-6 px-1.5 text-sm',
       )}
     >
       {children}
