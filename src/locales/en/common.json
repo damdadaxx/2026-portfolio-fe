@@ -81,7 +81,100 @@
   "projects": {
     "title": "Project",
     "viewMore": "View more projects",
-    "viewProject": "View project"
+    "viewProject": "View project",
+    "description": "{{work}} client projects built at Reconers and {{team}} team projects from the Codeit bootcamp and hackathons. <br />Moving and K-TEST are written up as detailed case studies.",
+    "countLabel": "No. Projects",
+    "filter": {
+      "all": "All {{count}}",
+      "team": "Team projects {{count}}",
+      "work": "Work projects {{count}}",
+      "label": "Filter projects"
+    },
+    "caseStudy": "Case study",
+    "visitSite": "Visit site",
+    "members": "{{count}} members",
+    "items": {
+      "moving": {
+        "kind": "Team project",
+        "desc": "Connects moving customers and movers through quotes, then links them with 1:1 chat once confirmed",
+        "role": "Team lead · FE/BE"
+      },
+      "docthru": {
+        "kind": "Team project",
+        "desc": "Challenge platform",
+        "role": "FE/BE · Frontend lead"
+      },
+      "k-test": {
+        "kind": "Hackathon award",
+        "desc": "A service where foreign workers take a Korean speaking test online, from identity verification to results",
+        "role": "Frontend (solo)"
+      },
+      "forest-of-study": {
+        "kind": "Team project",
+        "desc": "Study platform",
+        "role": "Team lead · FE/BE"
+      },
+      "minters": {
+        "kind": "Work · Reconers",
+        "desc": "Purchase and review mission reward platform",
+        "role": "Sub developer"
+      },
+      "newmata": {
+        "kind": "Work · Reconers",
+        "desc": "AI math learning platform (tablet app)",
+        "role": "Sub developer"
+      },
+      "nanum": {
+        "kind": "Work · Reconers",
+        "desc": "Campaign site hosted by the Ministry of Health and Welfare",
+        "role": "Sub developer"
+      },
+      "milim": {
+        "kind": "Work · Reconers",
+        "desc": "Leisure gear and ticket rental/sales platform",
+        "role": "Lead developer"
+      },
+      "weblling": {
+        "kind": "Work · Reconers",
+        "desc": "Multilingual (KO/EN/JA) corporate site",
+        "role": "Lead developer"
+      },
+      "alpha": {
+        "kind": "Work · Reconers",
+        "desc": "Asset management branding and homepage",
+        "role": "Sub developer"
+      },
+      "miqube": {
+        "kind": "Work · Reconers",
+        "desc": "Smart factory company site",
+        "role": "Lead developer"
+      },
+      "socialstock": {
+        "kind": "Work · Reconers",
+        "desc": "Stock trading simulation service",
+        "role": "Lead developer"
+      },
+      "sonaks": {
+        "kind": "Work · Reconers",
+        "desc": "Car care shopping mall (web and hybrid app)",
+        "role": "Sub developer"
+      },
+      "popofesta": {
+        "kind": "Work · Reconers",
+        "desc": "Yeongdeungpo-gu Office online festival",
+        "role": "Lead developer"
+      },
+      "vuno": {
+        "kind": "Work · Reconers",
+        "desc": "Medical AI company site",
+        "role": "Lead developer"
+      },
+      "pagoe": {
+        "kind": "Work · Reconers",
+        "desc": "Corporate site",
+        "role": "Sub developer"
+      }
+    }
   },
   "contact": {
     "title": "Looking for<br />a great team",
