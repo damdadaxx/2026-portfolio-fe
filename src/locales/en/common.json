@@ -523,6 +523,169 @@
         "name": "K-TEST",
         "desc": "A Korean speaking test for foreign workers"
       }
+    },
+    "k-test": {
+      "chips": [
+        "Team project",
+        "Hackathon award",
+        "Frontend"
+      ],
+      "title": "K-TEST",
+      "oneLiner": [
+        "A service where foreign workers take a job and safety Korean speaking test online,",
+        "from identity verification to the result report"
+      ],
+      "stats": [
+        {
+          "label": "Period",
+          "value": "About 12 weeks",
+          "sub": "2026.06 – 2026.09"
+        },
+        {
+          "label": "Role",
+          "value": "Solo FE",
+          "sub": "Sole frontend developer · team of 6"
+        },
+        {
+          "label": "Award",
+          "value": "Encouragement Prize",
+          "sub": "8th K-Digital Training Hackathon"
+        }
+      ],
+      "stack": [
+        "Next.js 16",
+        "TypeScript",
+        "Zustand",
+        "TanStack Query",
+        "axios",
+        "MediaRecorder API",
+        "Tailwind CSS v4"
+      ],
+      "links": {
+        "service": "Visit service",
+        "githubFe": "GitHub FE",
+        "githubBe": "GitHub BE"
+      },
+      "hero": "Key screen capture — speaking question screen · 16:9 video",
+      "sections": {
+        "intro": "Service overview",
+        "scope": "Scope of work",
+        "problems": "Problem solving",
+        "retro": "Retrospective"
+      },
+      "intro": {
+        "body": "Test takers complete identity verification with their ID, face and earphone checks, then go through dual-monitor guidance and calibration before answering speaking questions. During the test, cheating is detected through browser events and webcam analysis, and afterwards they can review the scoring report and their test history.",
+        "screens": [
+          "Identity verification · ID and face check",
+          "Answering speaking questions",
+          "Scoring report"
+        ]
+      },
+      "scope": [
+        {
+          "title": "Test flow",
+          "items": [
+            "Built the entire test flow: identity verification → face → earphone check → calibration → questions → completion",
+            "Redesigned around pre-created sessions to match a change in the exam plan (new, resume and re-verify branches)",
+            "Blocked question exposure before the status lookup with an access guard (canAccess)"
+          ]
+        },
+        {
+          "title": "Test screens",
+          "items": [
+            "Speaking question renderer (image, text and audio sections)",
+            "Recorded answer upload",
+            "ProctorGuard (browser event detection) · WebcamMonitor (webcam analysis)",
+            "Adaptive webcam frame sampling: low frequency normally, shorter intervals when a violation is detected, balancing server load and detection delay"
+          ]
+        },
+        {
+          "title": "Results · foundation",
+          "items": [
+            "Test history, scoring report and violation details of disqualified sessions",
+            "Zustand (session and test state) + TanStack Query (server state)",
+            "Tailwind v4 design tokens and shared UI components"
+          ]
+        }
+      ],
+      "problemLabels": [
+        "Problem",
+        "Cause",
+        "Fix",
+        "Result"
+      ],
+      "problems": [
+        {
+          "tags": [
+            "Frontend",
+            "Proctoring",
+            "Browser events"
+          ],
+          "title": "Refining cheating detection so honest test takers aren't disqualified",
+          "problem": "A single tab switch could be logged as several violations, and losing focus while the camera permission prompt was open was mistaken for leaving the tab, so honest test takers could be disqualified.",
+          "cause": "On one tab switch the browser sends both blur and visibilitychange events. The camera permission prompt also causes a focus loss.",
+          "fix": "I merged the two simultaneous events into one record and filtered out focus loss while the camera permission prompt is showing so it isn't logged as leaving the tab.",
+          "result": "Duplicate records and false positives no longer disqualify honest test takers.",
+          "capture": "Webcam proctoring · violation detection screen capture"
+        },
+        {
+          "tags": [
+            "Frontend",
+            "State design",
+            "Polling"
+          ],
+          "title": "Waiting on the scoring screen without knowing you were disqualified",
+          "problem": "The result screen for a disqualified session didn't tell the user they were disqualified and only showed \"Scoring…\".",
+          "cause": "A disqualified session is never scored, so no result ID is created, and the polling stop condition had no disqualified state. Users waited up to 60 seconds of needless polling on the \"Scoring…\" screen without knowing.",
+          "fix": "I added the disqualified state to the polling stop condition and branched to a dedicated disqualification card and a violation detail page.",
+          "result": "Disqualified sessions move straight to the disqualification notice without waiting, and the test taker can review the violation details."
+        },
+        {
+          "tags": [
+            "Frontend",
+            "Signed URL",
+            "External API"
+          ],
+          "title": "Identity verification failing after uploading ID and face images",
+          "problem": "In a flow where ID and face images are uploaded directly to storage through a signed URL, the identity verification request failed.",
+          "cause": "Checking with the backend, the AI vendor (Azure Document Intelligence) is officially specified at 4MB but only handled about 1MB reliably, and failed from 2.3MB. The existing code only downscaled above 5MB, so smaller files like a phone original (e.g. 4.5MB) were uploaded as is.",
+          "fix": "I lowered the auto-downscale threshold and target size from 5MB to 1MB. Sensitive images are still uploaded directly via signed URL without passing through the server. PDFs can't be downscaled, so they are uploaded as is even above 1MB.",
+          "result": "The identity verification request failures were resolved.",
+          "capture": "Identity verification · upload screen capture"
+        },
+        {
+          "tags": [
+            "Frontend",
+            "Media",
+            "Upload"
+          ],
+          "title": "Recorded voice answers failing to upload with a 415",
+          "problem": "When uploading a recorded voice answer, the server rejected it with a 415 (unsupported media type).",
+          "cause": "The MIME type declared when issuing the signed URL differed from the Content-Type of the actual PUT request.",
+          "fix": "I changed the shared upload function's signature so the contentType declared at issuance is used as is in the PUT, applied it to the four uploads (answer, clip, ID, face), and retried transient failures up to twice with exponential backoff.",
+          "result": "The voice upload 415 failures are fixed, and transient network errors are retried automatically."
+        }
+      ],
+      "retro": [
+        {
+          "title": "What I learned",
+          "paragraphs": [
+            "Owning the whole test flow alone taught me that variables from outside the code, like plan changes and external API limits, also have to be absorbed by the design.",
+            "Building only the happy path wasn't enough. States users actually face, like a disqualified session, were always more varied than expected."
+          ]
+        },
+        {
+          "title": "How I work",
+          "paragraphs": [
+            "I use AI coding tools like Claude Code to speed up implementation, but I form the cause hypotheses and make the design decisions myself."
+          ]
+        }
+      ],
+      "next": {
+        "slug": "moving",
+        "name": "Moving",
+        "desc": "Moving quote matching + real-time 1:1 chat"
+      }
     }
   }
 }
