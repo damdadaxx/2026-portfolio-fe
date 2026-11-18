@@ -41,10 +41,16 @@ export default function CaseStudyPage({
     { label: sections.scope, node: <ColumnBlocks columns={content.scope} /> },
     {
       label: sections.problems,
-      node: <ProblemCases cases={content.problems} labels={content.problemLabels} />,
+      node: (
+        <ProblemCases
+          cases={content.problems}
+          labels={content.problemLabels}
+          captures={assets.problemCaptures}
+        />
+      ),
     },
   ]
-  if (content.performance && assets.performance) {
+  if (content.performance && assets.performance && sections.performance) {
     blocks.push({
       label: sections.performance,
       node: (
@@ -62,7 +68,11 @@ export default function CaseStudyPage({
         githubFeUrl={assets.githubFeUrl}
         githubBeUrl={assets.githubBeUrl}
       />
-      <VideoHero videoId={assets.videoId} title={content.title} />
+      <VideoHero
+        videoId={assets.videoId}
+        title={content.title}
+        placeholder={content.hero}
+      />
 
       {blocks.map((block, index) => (
         <CaseStudySection

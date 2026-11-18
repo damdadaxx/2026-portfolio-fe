@@ -6,7 +6,11 @@ export type CaseStudyContent = {
   stats: { label: string; value: string; sub: string }[]
   stack: string[]
   links: { service: string; githubFe: string; githubBe: string }
-  sections: Record<'intro' | 'scope' | 'problems' | 'performance' | 'retro', string>
+  /** 영상이 없을 때 대표 화면 자리에 보여 줄 문구 */
+  hero?: string
+  sections: Record<'intro' | 'scope' | 'problems' | 'retro', string> & {
+    performance?: string
+  }
   intro: { body: string; screens: string[] }
   scope: ColumnBlock[]
   problemLabels: [string, string, string, string]
@@ -17,6 +21,8 @@ export type CaseStudyContent = {
     cause: string
     fix: string
     result: string
+    /** 케이스 아래에 붙는 캡처 이미지의 설명. 이미지는 assets.problemCaptures 의 같은 순서 */
+    capture?: string
   }[]
   /** 성능 측정이 없는 프로젝트는 비워 둔다 */
   performance?: {
@@ -46,12 +52,15 @@ export type PerformanceImages = Record<
 
 /** 번역하지 않는 프로젝트별 자료: 영상, 링크, 이미지 */
 export type CaseStudyAssets = {
-  videoId: string
+  /** 없으면 영상 대신 자리 표시를 보여 준다 */
+  videoId?: string
   serviceUrl: string
   githubFeUrl?: string
   githubBeUrl?: string
   screens: ServiceScreen[]
   /** 서비스 소개 화면의 가로/세로 비율 */
   screenAspect: string
+  /** 문제 해결 케이스별 캡처 이미지. 없는 케이스는 비워 둔다 */
+  problemCaptures?: (string | undefined)[]
   performance?: PerformanceImages
 }

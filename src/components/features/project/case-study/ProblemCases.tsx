@@ -1,6 +1,7 @@
 import SlideUp from '@/components/ui/SlideUp/SlideUp'
 import { cn } from '@/utils/cn'
 
+import BrowserFrame from './BrowserFrame'
 import Reveal from './Reveal'
 import { BODY } from './styles'
 import Tag from './Tag'
@@ -10,9 +11,12 @@ import type { CaseStudyContent } from './types'
 export default function ProblemCases({
   cases,
   labels,
+  captures,
 }: {
   cases: CaseStudyContent['problems']
   labels: CaseStudyContent['problemLabels']
+  /** 케이스와 같은 순서의 캡처 이미지. 없는 케이스는 비워 둔다 */
+  captures?: (string | undefined)[]
 }) {
   const keys = ['problem', 'cause', 'fix', 'result'] as const
 
@@ -48,6 +52,24 @@ export default function ProblemCases({
               </p>
             </div>
           ))}
+          {captures?.[index] && (
+            <Reveal className="flex flex-col gap-3">
+              <div className="flex justify-center rounded-xl bg-[#eae8e1] px-4 py-8">
+                <BrowserFrame className="max-w-[762px]">
+                  <img
+                    src={captures[index]}
+                    alt={item.capture ?? ''}
+                    className="aspect-[760/475] w-full object-cover object-top"
+                  />
+                </BrowserFrame>
+              </div>
+              {item.capture && (
+                <p className="font-ko text-sm leading-normal font-medium opacity-75">
+                  {item.capture}
+                </p>
+              )}
+            </Reveal>
+          )}
         </article>
       ))}
     </div>
