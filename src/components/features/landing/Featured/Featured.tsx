@@ -8,7 +8,7 @@ import {
   type MotionValue,
 } from 'framer-motion'
 import { useRef, type ReactNode } from 'react'
-import { useTranslation } from 'react-i18next'
+import { Trans, useTranslation } from 'react-i18next'
 
 import SlideUp from '@/components/ui/SlideUp/SlideUp'
 import ViewAllButton from '@/components/ui/ViewAllButton/ViewAllButton'
@@ -236,7 +236,7 @@ export default function Featured() {
         {wrap(
           3,
           <p className="text-cream text-[15px] leading-[1.6] tracking-[-0.15px] opacity-90 lg:text-lg lg:tracking-[-0.18px]">
-            {t('featured.note')}
+            <Trans t={t} i18nKey="featured.note" components={{ br: <br /> }} />
           </p>,
         )}
       </div>
