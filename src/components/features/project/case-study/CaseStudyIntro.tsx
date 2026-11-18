@@ -5,7 +5,7 @@ import ArrowRightIcon from '@/components/ui/ArrowRightIcon'
 import SlideUp from '@/components/ui/SlideUp/SlideUp'
 import { cn } from '@/utils/cn'
 
-import Reveal from './Reveal'
+import Reveal from '@/components/ui/Reveal/Reveal'
 import Tag from './Tag'
 import type { CaseStudyContent } from './types'
 

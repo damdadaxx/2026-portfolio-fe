@@ -1,7 +1,7 @@
 import SlideUp from '@/components/ui/SlideUp/SlideUp'
 import { cn } from '@/utils/cn'
 
-import Reveal from './Reveal'
+import Reveal from '@/components/ui/Reveal/Reveal'
 import { BODY } from './styles'
 import type { CaseStudyContent, PerformanceImages } from './types'
 

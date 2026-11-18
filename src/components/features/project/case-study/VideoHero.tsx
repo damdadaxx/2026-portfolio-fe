@@ -4,7 +4,7 @@ import ArrowRightIcon from '@/components/ui/ArrowRightIcon'
 
 import BrowserFrame from './BrowserFrame'
 import LoopVideo from './LoopVideo'
-import Reveal from './Reveal'
+import Reveal from '@/components/ui/Reveal/Reveal'
 
 /** 반복 재생되는 대표 영상과, 자동 재생 안내·원본 영상 링크 한 줄 */
 export default function VideoHero({

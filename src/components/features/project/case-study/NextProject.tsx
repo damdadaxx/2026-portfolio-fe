@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import ArrowRightIcon from '@/components/ui/ArrowRightIcon'
 import SlideUp from '@/components/ui/SlideUp/SlideUp'
 
-import Reveal from './Reveal'
+import Reveal from '@/components/ui/Reveal/Reveal'
 import type { CaseStudyContent } from './types'
 
 /** 다음 프로젝트로 이어지는 마지막 구역 */

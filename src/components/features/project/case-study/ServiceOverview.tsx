@@ -1,7 +1,7 @@
 import SlideUp from '@/components/ui/SlideUp/SlideUp'
 
 import BrowserFrame from './BrowserFrame'
-import Reveal from './Reveal'
+import Reveal from '@/components/ui/Reveal/Reveal'
 import type { ServiceScreen } from './types'
 
 type ServiceOverviewProps = {

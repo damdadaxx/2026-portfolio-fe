@@ -2,7 +2,7 @@ import SlideUp from '@/components/ui/SlideUp/SlideUp'
 import { cn } from '@/utils/cn'
 
 import BrowserFrame from './BrowserFrame'
-import Reveal from './Reveal'
+import Reveal from '@/components/ui/Reveal/Reveal'
 import { BODY } from './styles'
 import Tag from './Tag'
 import type { CaseStudyContent } from './types'
