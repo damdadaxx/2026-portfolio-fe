@@ -1,8 +1,10 @@
 import { motion, stagger, useReducedMotion, type Variants } from 'framer-motion'
+import { useEffect } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 
 import ghostFrontal from '@/assets/images/ghost-frontal.png'
-import { NAV_ITEMS } from '@/lib/constants/nav'
+import { isActive, NAV_ITEMS } from '@/lib/constants/nav'
 import { SOCIAL_LINKS } from '@/lib/constants/socials'
 import { cn } from '@/utils/cn'
 import { HOVER_UNDERLINE } from '@/utils/hoverUnderline'
@@ -12,7 +14,7 @@ import Logo from './Logo'
 import NavLink from './NavLink'
 
 type MobileMenuOverlayProps = {
-  activeId: string
+  pathname: string
   onClose: () => void
 }
 
@@ -28,9 +30,18 @@ const itemVariants: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: 'easeOut' } },
 }
 
-export default function MobileMenuOverlay({ activeId, onClose }: MobileMenuOverlayProps) {
+export default function MobileMenuOverlay({ pathname, onClose }: MobileMenuOverlayProps) {
   const { t } = useTranslation()
   const shouldReduceMotion = useReducedMotion()
+
+  // 메뉴가 열려 있는 동안 뒷배경 스크롤을 잠근다
+  useEffect(() => {
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = prev
+    }
+  }, [])
 
   return (
     <motion.div
@@ -38,7 +49,7 @@ export default function MobileMenuOverlay({ activeId, onClose }: MobileMenuOverl
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="bg-brand text-cream fixed inset-0 z-50 overflow-y-auto lg:hidden"
+      className="bg-brand text-cream fixed inset-0 z-50 overflow-y-auto overscroll-contain lg:hidden"
     >
       <motion.div
         variants={contentVariants}
@@ -51,9 +62,9 @@ export default function MobileMenuOverlay({ activeId, onClose }: MobileMenuOverl
           variants={itemVariants}
           className="flex h-17.5 items-center justify-between px-2.25"
         >
-          <a href="#hero" onClick={onClose} aria-label="Home">
-            <Logo tone="beige" className="size-10" />
-          </a>
+          <Link to="/" onClick={onClose} aria-label="Home">
+            <Logo tone="beige" className="size-[33px]" />
+          </Link>
           <div className="flex items-center gap-5 pr-2">
             <LangSwitch size="sm" tone="beige" />
             <button
@@ -68,14 +79,14 @@ export default function MobileMenuOverlay({ activeId, onClose }: MobileMenuOverl
 
         <motion.p
           variants={itemVariants}
-          className="font-display break-keep px-7.5 pt-15 text-[42px] leading-[1.05] uppercase"
+          className="font-display break-keep px-7.5 pt-15 text-[36px] leading-10 uppercase"
         >
           <Trans t={t} i18nKey="mobileMenu.title" components={{ br: <br /> }} />
         </motion.p>
 
         <motion.div
           variants={itemVariants}
-          className="mt-18 flex items-start justify-between px-7.5"
+          className="mt-13 flex items-start justify-between px-7.5"
         >
           <motion.img
             src={ghostFrontal}
@@ -91,12 +102,12 @@ export default function MobileMenuOverlay({ activeId, onClose }: MobileMenuOverl
             <div className="mt-1.5 flex flex-col items-end gap-1.5">
               {NAV_ITEMS.map((item) => (
                 <NavLink
-                  key={item.id}
-                  href={item.id}
+                  key={item.href}
+                  href={item.href}
                   tone="beige"
-                  active={activeId === item.id}
+                  active={isActive(item.href, pathname)}
                   onClick={onClose}
-                  className="text-2xl"
+                  className="gap-2 text-2xl"
                 >
                   {item.label}
                 </NavLink>
@@ -107,11 +118,11 @@ export default function MobileMenuOverlay({ activeId, onClose }: MobileMenuOverl
 
         <motion.div
           variants={itemVariants}
-          className="mt-16 flex flex-col items-end gap-1.5 px-7.5"
+          className="mt-12 flex flex-col items-end gap-1.5 px-7.5"
         >
           <p className="text-xs uppercase">{t('mobileMenu.socialsLabel')}</p>
           <div className="mt-1.5 flex flex-col items-end gap-1.5">
-            {SOCIAL_LINKS.map((social) => (
+            {SOCIAL_LINKS.filter((social) => social.label !== 'CV').map((social) => (
               <a
                 key={social.label}
                 href={social.href}
@@ -126,7 +137,7 @@ export default function MobileMenuOverlay({ activeId, onClose }: MobileMenuOverl
 
         <motion.p
           variants={itemVariants}
-          className="mt-auto pt-16 pb-10 text-center text-[10px] tracking-[-0.1px] uppercase"
+          className="mt-auto pt-16 pb-5 text-center text-[10px] leading-[18px] tracking-[-0.1px] uppercase"
         >
           {t('footer.copyright')}
         </motion.p>

@@ -9,6 +9,8 @@
   --font-display: 'Oi', cursive;
   --font-display-ko: 'Gasoek One', cursive;
   --font-danfo: 'Danfo', cursive;
+  --breakpoint-wide: 94rem;
+  --font-ko: 'Noto Sans KR', system-ui, sans-serif;
   --font-sans: 'Inter', 'Noto Sans KR', system-ui, sans-serif;
 }
 
@@ -63,4 +65,33 @@ body:hover {
 
 .animate-marquee {
   animation: marquee 40s linear infinite;
+}
+
+@keyframes shimmer {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(23 77 196 / 0.1);
+}
+
+.skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.5), transparent);
+  animation: shimmer 1.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton::after {
+    animation: none;
+  }
 }

@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 
 import PillButton from '@/components/ui/PillButton/PillButton'
 import type { Project } from '@/lib/constants/projects'
@@ -30,10 +31,8 @@ export default function ProjectRow({ project }: { project: Project }) {
   }
 
   return (
-    <a
-      href={project.url}
-      target="_blank"
-      rel="noopener noreferrer"
+    <Link
+      to={`/project/${project.slug}`}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -66,6 +65,6 @@ export default function ProjectRow({ project }: { project: Project }) {
       >
         <PillButton presentational label={t('projects.viewProject')} className="bg-cream" />
       </span>
-    </a>
+    </Link>
   )
 }

@@ -17,7 +17,7 @@ function KeywordRun() {
 
 export default function KeywordBanner() {
   return (
-    <div className="border-brand flex h-[100px] w-full items-center overflow-hidden border-y">
+    <div className="border-brand flex h-[100px] w-full items-center overflow-hidden border-y bg-cream">
       <div className="animate-marquee motion-reduce:animate-none flex w-max shrink-0 gap-9">
         <KeywordRun />
         <KeywordRun />

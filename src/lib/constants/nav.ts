@@ -1,6 +1,9 @@
 export const NAV_ITEMS = [
-  { id: 'about', key: 'nav.about', label: 'About me' },
-  { id: 'career', key: 'nav.career', label: 'Career' },
-  { id: 'projects', key: 'nav.project', label: 'Project' },
-  { id: 'contact', key: 'nav.contact', label: 'Contact' },
+  { href: '/', label: 'Home' },
+  { href: '/project', label: 'Project' },
+  { href: '/about', label: 'About' },
 ] as const
+
+export function isActive(href: string, pathname: string) {
+  return href === '/' ? pathname === '/' : pathname.startsWith(href)
+}
