@@ -18,7 +18,7 @@ export default function BrowserFrame({
     <div
       className={cn(
         'w-full overflow-hidden border border-[#dbdbd6] bg-white',
-        lg ? 'rounded-2xl' : 'rounded-[10px]',
+        lg ? 'rounded-[10px] lg:rounded-2xl' : 'rounded-[10px]',
         className,
       )}
     >
@@ -26,14 +26,14 @@ export default function BrowserFrame({
         aria-hidden
         className={cn(
           'flex items-center bg-[#f0f0ee]',
-          lg ? 'h-[46px] gap-2.5 pl-5' : 'h-[18px] gap-1.5 pl-3',
+          lg ? 'h-[18px] gap-1.5 pl-3 lg:h-[46px] lg:gap-2.5 lg:pl-5' : 'h-[18px] gap-1.5 pl-3',
         )}
       >
         {DOTS.map((color) => (
           <span
             key={color}
             style={{ backgroundColor: color }}
-            className={cn('rounded-full', lg ? 'size-3.5' : 'size-2')}
+            className={cn('rounded-full', lg ? 'size-2 lg:size-3.5' : 'size-2')}
           />
         ))}
       </div>
