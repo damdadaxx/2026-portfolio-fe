@@ -106,7 +106,7 @@ export default function CaseStudyIntro({
               <Tag key={tech}>{tech}</Tag>
             ))}
           </div>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 lg:justify-end">
             {githubFeUrl && <Pill href={githubFeUrl} label={content.links.githubFe} />}
             {githubBeUrl && <Pill href={githubBeUrl} label={content.links.githubBe} />}
             <Pill href={serviceUrl} label={content.links.service} primary />

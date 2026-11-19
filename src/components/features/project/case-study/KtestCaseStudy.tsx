@@ -11,6 +11,7 @@ import type { CaseStudyAssets } from './types'
 const ASSETS: CaseStudyAssets = {
   videoId: 'qjli_cuHLkY',
   serviceUrl: PROJECTS.find((project) => project.slug === 'k-test')?.url ?? '#',
+  githubFeUrl: 'https://github.com/damdadaxx/k-test-fe',
   screens: [
     { kind: 'image', src: screenIdentity },
     { kind: 'image', src: screenSpeaking },

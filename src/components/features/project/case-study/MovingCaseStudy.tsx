@@ -14,6 +14,8 @@ import type { CaseStudyAssets } from './types'
 const ASSETS: CaseStudyAssets = {
   videoId: 'gVe8OGmJXug',
   serviceUrl: PROJECTS.find((project) => project.slug === 'moving')?.url ?? '#',
+  githubFeUrl: 'https://github.com/damdadaxx/13-moving-team3-fe',
+  githubBeUrl: 'https://github.com/damdadaxx/13-moving-team3-be',
   screens: [
     { kind: 'image', src: screenRequest },
     { kind: 'image', src: screenSend },
