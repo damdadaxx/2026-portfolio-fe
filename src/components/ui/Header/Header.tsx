@@ -47,7 +47,7 @@ export default function Header() {
       >
         <div className="relative mx-auto flex h-17.5 max-w-[1920px] items-center justify-between px-2.25 lg:h-25 lg:px-12.25">
           <Link to="/" aria-label="Home">
-            <Logo className="size-10 lg:size-16.5" />
+            <Logo className="size-[33px] lg:size-16.5" />
           </Link>
 
           <nav className="absolute top-1/2 left-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-20 lg:flex">

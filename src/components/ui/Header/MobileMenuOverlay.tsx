@@ -63,7 +63,7 @@ export default function MobileMenuOverlay({ pathname, onClose }: MobileMenuOverl
           className="flex h-17.5 items-center justify-between px-2.25"
         >
           <Link to="/" onClick={onClose} aria-label="Home">
-            <Logo tone="beige" className="size-10" />
+            <Logo tone="beige" className="size-[33px]" />
           </Link>
           <div className="flex items-center gap-5 pr-2">
             <LangSwitch size="sm" tone="beige" />
