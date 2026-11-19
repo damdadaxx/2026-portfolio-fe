@@ -9,6 +9,7 @@ import TopButton from '@/components/ui/TopButton/TopButton'
 import { usePageView } from '@/hooks/usePageView'
 import AboutPage from '@/pages/AboutPage'
 import HomePage from '@/pages/HomePage'
+import NotFoundPage from '@/pages/NotFoundPage'
 import ProjectDetailPage from '@/pages/ProjectDetailPage'
 import ProjectPage from '@/pages/ProjectPage'
 
@@ -49,7 +50,7 @@ export default function App() {
           <Route path="/project" element={<ProjectPage />} />
           <Route path="/project/:slug" element={<ProjectDetailPage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="*" element={<HomePage introDone={introDone} />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
 

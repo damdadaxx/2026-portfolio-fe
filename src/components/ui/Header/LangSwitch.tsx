@@ -11,22 +11,33 @@ type LangSwitchProps = {
 
 const LOCALES = ['en', 'ko'] as const
 
-export default function LangSwitch({ size = 'md', tone = 'blue', className }: LangSwitchProps) {
+export default function LangSwitch({
+  size = 'md',
+  tone = 'blue',
+  className,
+}: LangSwitchProps) {
   const { i18n } = useTranslation()
 
   const textSize = size === 'md' ? 'text-lg' : 'text-sm'
   const padding = size === 'md' ? 'px-1 py-0.5' : 'px-[3px] py-px'
+  const gap = size === 'md' ? 'gap-1.5' : 'gap-1'
   const color = tone === 'blue' ? 'text-brand border-brand' : 'text-cream border-cream'
 
   return (
-    <div className={cn('flex items-center gap-1.5', className)}>
+    <div className={cn('flex items-center', gap, className)}>
       {LOCALES.map((locale, index) => {
         const selected = i18n.language === locale
 
         return (
-          <div key={locale} className="flex items-center gap-1.5">
+          <div key={locale} className={cn('flex items-center', gap)}>
             {index > 0 && (
-              <span className={textSize + ' ' + (tone === 'blue' ? 'text-brand' : 'text-cream')}>/</span>
+              <span
+                className={
+                  textSize + ' ' + (tone === 'blue' ? 'text-brand' : 'text-cream')
+                }
+              >
+                /
+              </span>
             )}
             <button
               type="button"

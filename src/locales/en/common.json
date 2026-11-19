@@ -6,7 +6,7 @@
     "contact": "Contact"
   },
   "hero": {
-    "statement": "A full-stack developer with 2.5 years of frontend experience, building everything from components to APIs and databases — and shipping it."
+    "statement": "A full-stack developer with 2.5 years of frontend experience, <br />building everything from components to APIs and databases<br /> — and shipping it."
   },
   "common": {
     "viewMore": "View more"
@@ -81,7 +81,100 @@
   "projects": {
     "title": "Project",
     "viewMore": "View more projects",
-    "viewProject": "View project"
+    "viewProject": "View project",
+    "description": "{{work}} client projects built at Reconers and {{team}} team projects from the Codeit bootcamp and hackathons. <br />Moving and K-TEST are written up as detailed case studies.",
+    "countLabel": "No. Projects",
+    "filter": {
+      "all": "All {{count}}",
+      "team": "Team projects {{count}}",
+      "work": "Work projects {{count}}",
+      "label": "Filter projects"
+    },
+    "caseStudy": "Case study",
+    "visitSite": "Visit site",
+    "members": "{{count}} members",
+    "items": {
+      "moving": {
+        "kind": "Team project",
+        "desc": "Connects moving customers and movers through quotes, then links them with 1:1 chat once confirmed",
+        "role": "Team lead · FE/BE"
+      },
+      "docthru": {
+        "kind": "Team project",
+        "desc": "Challenge platform",
+        "role": "FE/BE · Frontend lead"
+      },
+      "k-test": {
+        "kind": "Hackathon award",
+        "desc": "A service where foreign workers take a Korean speaking test online, from identity verification to results",
+        "role": "Frontend (solo)"
+      },
+      "forest-of-study": {
+        "kind": "Team project",
+        "desc": "Study platform",
+        "role": "Team lead · FE/BE"
+      },
+      "minters": {
+        "kind": "Work · Reconers",
+        "desc": "Purchase and review mission reward platform",
+        "role": "Sub developer"
+      },
+      "newmata": {
+        "kind": "Work · Reconers",
+        "desc": "AI math learning platform (tablet app)",
+        "role": "Sub developer"
+      },
+      "nanum": {
+        "kind": "Work · Reconers",
+        "desc": "Campaign site hosted by the Ministry of Health and Welfare",
+        "role": "Sub developer"
+      },
+      "milim": {
+        "kind": "Work · Reconers",
+        "desc": "Leisure gear and ticket rental/sales platform",
+        "role": "Lead developer"
+      },
+      "weblling": {
+        "kind": "Work · Reconers",
+        "desc": "Multilingual (KO/EN/JA) corporate site",
+        "role": "Lead developer"
+      },
+      "alpha": {
+        "kind": "Work · Reconers",
+        "desc": "Asset management branding and homepage",
+        "role": "Sub developer"
+      },
+      "miqube": {
+        "kind": "Work · Reconers",
+        "desc": "Smart factory company site",
+        "role": "Lead developer"
+      },
+      "socialstock": {
+        "kind": "Work · Reconers",
+        "desc": "Stock trading simulation service",
+        "role": "Lead developer"
+      },
+      "sonaks": {
+        "kind": "Work · Reconers",
+        "desc": "Car care shopping mall (web and hybrid app)",
+        "role": "Sub developer"
+      },
+      "popofesta": {
+        "kind": "Work · Reconers",
+        "desc": "Yeongdeungpo-gu Office online festival",
+        "role": "Lead developer"
+      },
+      "vuno": {
+        "kind": "Work · Reconers",
+        "desc": "Medical AI company site",
+        "role": "Lead developer"
+      },
+      "pagoe": {
+        "kind": "Work · Reconers",
+        "desc": "Corporate site",
+        "role": "Sub developer"
+      }
+    }
   },
   "contact": {
     "title": "Looking for<br />a great team",
@@ -94,8 +187,13 @@
     "linksLabel": "You can also find me on",
     "copyright": "© Copyright 2026 HYOJU"
   },
+  "notFound": {
+    "title": "Lost your way?",
+    "desc": "The page you're looking for doesn't exist or has moved.",
+    "home": "Back to home"
+  },
   "mobileMenu": {
-    "title": "Ready<br /> to dive <br /> in?",
+    "title": "Where<br />to<br />next?",
     "menuLabel": "Menu",
     "socialsLabel": "Socials",
     "open": "MENU",
@@ -105,7 +203,7 @@
     "badge": "Featured projects",
     "lead": "Built end to end, proven by measurement",
     "title": "Two projects",
-    "note": "Both are written up as case studies: problem → cause → fix → result.",
+    "note": "Both are written up as case studies:<br />problem → cause → fix → result.",
     "imageLabel": "{{name}} — key screen",
     "imageCaption": "Image area · 16:9",
     "keyResults": "KEY RESULTS",
@@ -116,7 +214,7 @@
         "name": "Moving",
         "meta": "Team project · Lead · FE/BE",
         "desc": "Moving-quote matching with real-time 1:1 chat. I owned the notification and chat APIs through to the UI, and used measurement to find and fix performance bottlenecks and redundant chat refetches.",
-        "stack": "NEXT.JS · EXPRESS · PRISMA · SOCKET.IO",
+        "stack": "NEXT.JS · EXPRESS · PRISMA · SOCKET.IO · SSE · REACT · TYPESCRIPT · TANSTACK QUERY · ZOD · TAILWIND",
         "stats": [
           {
             "value": "65.0 → 95.4",
@@ -137,7 +235,7 @@
         "name": "K-TEST",
         "meta": "Team project · Sole frontend · Hackathon award",
         "desc": "A Korean speaking test on job and safety topics for foreign workers. I built the entire test flow on my own — from identity verification and answering questions to the result report.",
-        "stack": "NEXT.JS · TYPESCRIPT · ZUSTAND · TANSTACK QUERY",
+        "stack": "NEXT.JS · TYPESCRIPT · ZUSTAND · TANSTACK QUERY · TAILWIND",
         "stats": [
           {
             "value": "Excellence Award",
@@ -185,5 +283,523 @@
         "body": "From designer to developer, from frontend to full-stack — I keep widening my range."
       }
     ]
+  },
+  "caseStudy": {
+    "ui": {
+      "back": "← All projects",
+      "next": "Next project",
+      "nextAria": "Go to next project",
+      "watchVideo": "Watch video",
+      "videoStatus": "Autoplaying · pauses when out of view"
+    },
+    "moving": {
+      "chips": [
+        "Team project",
+        "Codeit bootcamp",
+        "Full-stack"
+      ],
+      "title": "Moving",
+      "oneLiner": [
+        "A quote-matching service that connects moving customers and movers,",
+        "then links them through real-time 1:1 chat once a quote is confirmed"
+      ],
+      "stats": [
+        {
+          "label": "Period",
+          "value": "7 weeks",
+          "sub": "2026.08 – 2026.10"
+        },
+        {
+          "label": "Role",
+          "value": "Team lead",
+          "sub": "FE lead · covered both FE and BE"
+        },
+        {
+          "label": "Team",
+          "value": "6 people",
+          "sub": "Codeit bootcamp team project"
+        }
+      ],
+      "stack": [
+        "Next.js",
+        "TypeScript",
+        "TanStack Query",
+        "Express",
+        "Prisma",
+        "Socket.IO",
+        "SSE",
+        "React",
+        "Zod",
+        "Tailwind"
+      ],
+      "links": {
+        "service": "Visit service",
+        "githubFe": "GitHub FE",
+        "githubBe": "GitHub BE"
+      },
+      "sections": {
+        "intro": "Service overview",
+        "scope": "Scope of work",
+        "problems": "Problem solving",
+        "performance": "Performance",
+        "retro": "Retrospective"
+      },
+      "intro": {
+        "body": "A customer requests quotes with their moving conditions, and movers whose service area and type match send quotes back. The customer compares and confirms one; after that come the deposit payment and 1:1 chat, and once the move is done, the balance payment and a review.",
+        "screens": [
+          "Customer · Request a quote",
+          "Mover · Send a quote",
+          "1:1 chat after confirmation"
+        ]
+      },
+      "scope": [
+        {
+          "title": "Screens",
+          "items": [
+            "Designed shared components (Header, Toast, Skeleton, etc.)",
+            "Landing, mover detail and my page",
+            "Pending, received and confirmed quote details",
+            "Header notification dropdown and 1:1 chat screen"
+          ]
+        },
+        {
+          "title": "API",
+          "items": [
+            "Notification API (REST + real-time delivery over SSE)",
+            "Confirmed-quote chat API (Socket.IO, read receipts)",
+            "Moved chat message storage to the main DB and S3"
+          ]
+        },
+        {
+          "title": "Structure · Quality",
+          "items": [
+            "Next.js App Router · TypeScript strict setup",
+            "Domain-based folder structure and refactoring",
+            "Lighthouse-based performance and accessibility improvements",
+            "Sitemap · robots.txt · GA consent banner"
+          ]
+        }
+      ],
+      "problemLabels": [
+        "Problem",
+        "Cause",
+        "Fix",
+        "Result"
+      ],
+      "problems": [
+        {
+          "tags": [
+            "Backend",
+            "SSE",
+            "Transaction"
+          ],
+          "title": "Ghost notifications that said a failed quote had arrived",
+          "problem": "The quote registration API failed with 409/500, yet the other party's screen showed a \"Your quote has arrived\" notification, and tapping it led to a 404.",
+          "cause": "SSE writes to the socket immediately, regardless of whether the transaction commits. Because the notification was created and sent inside the transaction, a later rollback left it on screen but not in the DB.",
+          "fix": "I split the notification API into create and publishCreated so that saving happens inside the same transaction and sending happens only after the commit. The same approach was applied to targeted quotes and quote status changes.",
+          "result": "Rolled-back quotes no longer send notifications. \"Send only on success, never on a unique-constraint violation\" is pinned down with unit tests."
+        },
+        {
+          "tags": [
+            "Frontend",
+            "Real-time chat",
+            "Cache"
+          ],
+          "title": "About 120 refetches for every single message received",
+          "problem": "Every incoming chat message triggered about 120 refetches.",
+          "cause": "Each Realtime event reloaded the whole chat room list (rooms) and the message pages.",
+          "fix": "I updated the cache directly from the event payload and put a 300ms debounce on the remaining refetches.",
+          "result": "Refetches per received message dropped from about 120 to at most 1."
+        },
+        {
+          "tags": [
+            "Full-stack",
+            "Socket.IO",
+            "Architecture change"
+          ],
+          "title": "Why we moved real-time chat from Supabase Realtime to Socket.IO",
+          "problem": "We first built chat quickly on Supabase Realtime without a separate socket server, but limits showed up in operation.",
+          "cause": "We had to manage the main DB and Supabase together, the free plan had event limits, and interactions that aren't stored in the DB, like a typing indicator, were hard to handle.",
+          "fix": "In the second iteration I switched to Socket.IO, consolidated messages into the single main DB, and stored chat images in S3.",
+          "result": "DB management became a single concern, and we could add chat UX such as a typing indicator."
+        },
+        {
+          "tags": [
+            "Frontend",
+            "Performance"
+          ],
+          "title": "An LCP stretched by late-starting image requests",
+          "problem": "Lighthouse showed long LCP on several pages, and even after cutting image and font sizes, some pages barely improved.",
+          "cause": "The shared ProfileImage could not receive a priority-loading option, so even the first image at the top of the screen was lazy-loaded and its request started late.",
+          "fix": "I converted 8 static images to WebP (3.62MB → 169KB) and kept only the glyphs Pretendard actually uses (2.06MB → 171KB). I also added a priority prop to ProfileImage and applied it only to the first card in the list.",
+          "result": "Mobile performance went from 43.5 to 78.8 and desktop from 65.0 to 95.4. LCP dropped from 15.62s to 6.30s on mobile and from 2.85s to 1.37s on desktop."
+        },
+        {
+          "tags": [
+            "Frontend",
+            "Real-time chat"
+          ],
+          "title": "Auto-scroll and read receipts stopping in long conversations",
+          "problem": "In chat rooms with many messages, read receipts and auto-scroll occasionally didn't run even when a new message arrived.",
+          "cause": "New messages were detected by messages.length. Because pages of 10 are cached, the array length could stay the same even when a new message arrived.",
+          "fix": "I changed read receipts and scrolling to trigger on the last message ID instead of the array length.",
+          "result": "The same symptom hasn't been reported since, and the latest message is detected regardless of how many messages there are."
+        }
+      ],
+      "performance": {
+        "lead": "I measured 37 page and device pairs before and after the improvements. Figures are shown per device.",
+        "head": [
+          "Device",
+          "Pairs",
+          "Performance (before → after)",
+          "LCP (before → after)",
+          "Accessibility (before → after)"
+        ],
+        "rows": [
+          [
+            "Desktop",
+            "19",
+            "65.0 → 95.4 (+46.7%)",
+            "2.85s → 1.37s (−51.7%)",
+            "93.9 → 95.0"
+          ],
+          [
+            "Mobile",
+            "18",
+            "43.5 → 78.8 (+81.2%)",
+            "15.62s → 6.30s (−59.7%)",
+            "93.8 → 94.8"
+          ]
+        ],
+        "conditions": {
+          "title": "Measurement conditions",
+          "rows": [
+            {
+              "label": "Tools",
+              "value": "Lighthouse 13.4.1 · Chrome 155 (macOS) · simulated throttling"
+            },
+            {
+              "label": "Desktop",
+              "value": "RTT 40ms · 10Mbps · no CPU throttling"
+            },
+            {
+              "label": "Mobile",
+              "value": "RTT 150ms · about 1.6Mbps · 4x CPU slowdown"
+            }
+          ]
+        },
+        "note": "The screens that changed most are the mover's sent-quote detail (desktop 39 → 100, mobile 27 → 85) and the sent-quote list (desktop 41 → 100, mobile 31 → 84).",
+        "captures": {
+          "before": "Before",
+          "after": "After",
+          "desktop": "Desktop",
+          "mobile": "Mobile",
+          "score": "Performance"
+        },
+        "captionScores": {
+          "desktop": [
+            39,
+            100
+          ],
+          "mobile": [
+            27,
+            85
+          ]
+        }
+      },
+      "retro": [
+        {
+          "title": "What I learned",
+          "paragraphs": [
+            "Real-time delivery is a side effect outside the transaction, so it isn't rolled back. Events that leave the system have to wait until after the commit.",
+            "Even small images lengthen LCP if their request starts late. Give priority only to the actual LCP element."
+          ]
+        },
+        {
+          "title": "Next steps",
+          "paragraphs": [
+            "Mobile LCP still has room to improve at an average of 6.30s. I plan to render the first data earlier with server prefetch and HydrationBoundary.",
+            "SSE connections live in memory, so this assumes a single server. Scaling out would require Redis pub/sub."
+          ]
+        }
+      ],
+      "next": {
+        "slug": "k-test",
+        "name": "K-TEST",
+        "desc": "A Korean speaking test for foreign workers"
+      }
+    },
+    "k-test": {
+      "chips": [
+        "Team project",
+        "Hackathon award",
+        "Frontend"
+      ],
+      "title": "K-TEST",
+      "oneLiner": [
+        "A service where foreign workers take a job and safety Korean speaking test online,",
+        "from identity verification to the result report"
+      ],
+      "stats": [
+        {
+          "label": "Period",
+          "value": "About 12 weeks",
+          "sub": "2026.06 – 2026.09"
+        },
+        {
+          "label": "Role",
+          "value": "Solo FE",
+          "sub": "Sole frontend developer · team of 6"
+        },
+        {
+          "label": "Award",
+          "value": "Encouragement Prize",
+          "sub": "8th K-Digital Training Hackathon"
+        }
+      ],
+      "stack": [
+        "Next.js 16",
+        "TypeScript",
+        "Zustand",
+        "TanStack Query",
+        "axios",
+        "MediaRecorder API",
+        "Tailwind CSS v4"
+      ],
+      "links": {
+        "service": "Visit service",
+        "githubFe": "GitHub FE",
+        "githubBe": "GitHub BE"
+      },
+      "hero": "Key screen capture — speaking question screen · 16:9 video",
+      "sections": {
+        "intro": "Service overview",
+        "scope": "Scope of work",
+        "problems": "Problem solving",
+        "retro": "Retrospective"
+      },
+      "intro": {
+        "body": "Test takers complete identity verification with their ID, face and earphone checks, then go through dual-monitor guidance and calibration before answering speaking questions. During the test, cheating is detected through browser events and webcam analysis, and afterwards they can review the scoring report and their test history.",
+        "screens": [
+          "Identity verification · ID and face check",
+          "Answering speaking questions",
+          "Scoring report"
+        ]
+      },
+      "scope": [
+        {
+          "title": "Test flow",
+          "items": [
+            "Built the entire test flow: identity verification → face → earphone check → calibration → questions → completion",
+            "Redesigned around pre-created sessions to match a change in the exam plan (new, resume and re-verify branches)",
+            "Blocked question exposure before the status lookup with an access guard (canAccess)"
+          ]
+        },
+        {
+          "title": "Test screens",
+          "items": [
+            "Speaking question renderer (image, text and audio sections)",
+            "Recorded answer upload",
+            "ProctorGuard (browser event detection) · WebcamMonitor (webcam analysis)",
+            "Adaptive webcam frame sampling: low frequency normally, shorter intervals when a violation is detected, balancing server load and detection delay"
+          ]
+        },
+        {
+          "title": "Results · foundation",
+          "items": [
+            "Test history, scoring report and violation details of disqualified sessions",
+            "Zustand (session and test state) + TanStack Query (server state)",
+            "Tailwind v4 design tokens and shared UI components"
+          ]
+        }
+      ],
+      "problemLabels": [
+        "Problem",
+        "Cause",
+        "Fix",
+        "Result"
+      ],
+      "problems": [
+        {
+          "tags": [
+            "Frontend",
+            "Proctoring",
+            "Browser events"
+          ],
+          "title": "Refining cheating detection so honest test takers aren't disqualified",
+          "problem": "A single tab switch could be logged as several violations, and losing focus while the camera permission prompt was open was mistaken for leaving the tab, so honest test takers could be disqualified.",
+          "cause": "On one tab switch the browser sends both blur and visibilitychange events. The camera permission prompt also causes a focus loss.",
+          "fix": "I merged the two simultaneous events into one record and filtered out focus loss while the camera permission prompt is showing so it isn't logged as leaving the tab.",
+          "result": "Duplicate records and false positives no longer disqualify honest test takers.",
+          "capture": "Webcam proctoring · violation detection screen capture"
+        },
+        {
+          "tags": [
+            "Frontend",
+            "State design",
+            "Polling"
+          ],
+          "title": "Waiting on the scoring screen without knowing you were disqualified",
+          "problem": "The result screen for a disqualified session didn't tell the user they were disqualified and only showed \"Scoring…\".",
+          "cause": "A disqualified session is never scored, so no result ID is created, and the polling stop condition had no disqualified state. Users waited up to 60 seconds of needless polling on the \"Scoring…\" screen without knowing.",
+          "fix": "I added the disqualified state to the polling stop condition and branched to a dedicated disqualification card and a violation detail page.",
+          "result": "Disqualified sessions move straight to the disqualification notice without waiting, and the test taker can review the violation details."
+        },
+        {
+          "tags": [
+            "Frontend",
+            "Signed URL",
+            "External API"
+          ],
+          "title": "Identity verification failing after uploading ID and face images",
+          "problem": "In a flow where ID and face images are uploaded directly to storage through a signed URL, the identity verification request failed.",
+          "cause": "Checking with the backend, the AI vendor (Azure Document Intelligence) is officially specified at 4MB but only handled about 1MB reliably, and failed from 2.3MB. The existing code only downscaled above 5MB, so smaller files like a phone original (e.g. 4.5MB) were uploaded as is.",
+          "fix": "I lowered the auto-downscale threshold and target size from 5MB to 1MB. Sensitive images are still uploaded directly via signed URL without passing through the server. PDFs can't be downscaled, so they are uploaded as is even above 1MB.",
+          "result": "The identity verification request failures were resolved.",
+          "capture": "Identity verification · upload screen capture"
+        },
+        {
+          "tags": [
+            "Frontend",
+            "Media",
+            "Upload"
+          ],
+          "title": "Recorded voice answers failing to upload with a 415",
+          "problem": "When uploading a recorded voice answer, the server rejected it with a 415 (unsupported media type).",
+          "cause": "The MIME type declared when issuing the signed URL differed from the Content-Type of the actual PUT request.",
+          "fix": "I changed the shared upload function's signature so the contentType declared at issuance is used as is in the PUT, applied it to the four uploads (answer, clip, ID, face), and retried transient failures up to twice with exponential backoff.",
+          "result": "The voice upload 415 failures are fixed, and transient network errors are retried automatically."
+        }
+      ],
+      "retro": [
+        {
+          "title": "What I learned",
+          "paragraphs": [
+            "Owning the whole test flow alone taught me that variables from outside the code, like plan changes and external API limits, also have to be absorbed by the design.",
+            "Building only the happy path wasn't enough. States users actually face, like a disqualified session, were always more varied than expected."
+          ]
+        },
+        {
+          "title": "How I work",
+          "paragraphs": [
+            "I use AI coding tools like Claude Code to speed up implementation, but I form the cause hypotheses and make the design decisions myself."
+          ]
+        }
+      ],
+      "next": {
+        "slug": "moving",
+        "name": "Moving",
+        "desc": "Moving quote matching + real-time 1:1 chat"
+      }
+    }
+  },
+  "aboutPage": {
+    "intro": {
+      "title": "About",
+      "lead": "With 2 years 6 months of frontend experience and a full-stack bootcamp behind me, I'm a full-stack developer who builds everything from component design to APIs and DBs, and takes responsibility through deployment.",
+      "body": "I started as a UI/UX designer and became a developer because I wanted to know how screens actually work. As a team lead I watch the schedule and the FE/BE dependencies; as a teammate I trace a problem's cause all the way down.",
+      "github": "GitHub"
+    },
+    "career": {
+      "title": "Career log",
+      "items": [
+        {
+          "date": "2026.03 — 10",
+          "type": "feat",
+          "major": true,
+          "head": true,
+          "title": "Codeit Full-stack Bootcamp",
+          "desc": "Moving (FE/BE team lead), K-TEST (solo FE, hackathon award), Docthru and Forest of Study. I didn't stop at building features; I followed through on measurement and edge cases."
+        },
+        {
+          "date": "2025.07 — 2026.02",
+          "type": "chore",
+          "title": "IELTS study group leader",
+          "desc": "Ran a study group and earned an IELTS 6.5. I got into the habit of reading official English docs without getting stuck."
+        },
+        {
+          "date": "2023.11 — 2025.07",
+          "type": "chore",
+          "title": "Working holiday in the UK",
+          "desc": "Managed work and daily life on my own in an unfamiliar place, and learned to ask quickly and pick things up fast."
+        },
+        {
+          "date": "2021.04 — 2023.09",
+          "type": "feat",
+          "major": true,
+          "title": "Reconers · Frontend Developer",
+          "desc": "Published and developed over 100 responsive sites, shopping malls and apps. Took charge of live services like Minters, building 2 years 6 months of hands-on experience."
+        },
+        {
+          "date": "2020",
+          "type": "feat",
+          "title": "Ezen Academy · Frontend course",
+          "desc": "Relearned HTML, CSS and JavaScript from the ground up and turned from designer toward developer."
+        },
+        {
+          "date": "2018.11 — 2019.04",
+          "type": "design",
+          "title": "Timely · UI/UX Designer",
+          "desc": "Designing screens made me start wondering how they actually work. I also did three freelance online exhibitions for Daegu Arts University around then."
+        },
+        {
+          "date": "2017.02 — 2018.01",
+          "type": "init",
+          "title": "Co-founded Special Dress",
+          "desc": "After graduating in Fashion Design at Yeungnam University, I ran my own brand and, for the first time, was responsible for what actually reaches the user."
+        }
+      ]
+    },
+    "skills": {
+      "title": "Tech stack"
+    },
+    "more": {
+      "education": {
+        "title": "Education",
+        "items": [
+          {
+            "date": "2026.03 — 10",
+            "text": "Codeit Full-stack Bootcamp"
+          },
+          {
+            "date": "2020",
+            "text": "Ezen Academy Frontend course"
+          },
+          {
+            "date": "2018",
+            "text": "Eum Computer Academy Web design"
+          },
+          {
+            "date": "2011 — 2017",
+            "text": "Yeungnam University, Fashion Design (3.72 / 4.5)"
+          }
+        ]
+      },
+      "awards": {
+        "title": "Awards · Certifications",
+        "items": [
+          {
+            "date": "2026.09",
+            "text": "8th K-Digital Training Hackathon, Encouragement Prize"
+          },
+          {
+            "date": "2026.06",
+            "text": "Engineer Information Processing, written exam passed"
+          },
+          {
+            "date": "2026.02",
+            "text": "IELTS 6.5"
+          },
+          {
+            "date": "2018.06",
+            "text": "Web Design Technician"
+          },
+          {
+            "date": "2018.02",
+            "text": "Korean History Test, Level 1"
+          }
+        ]
+      }
+    }
   }
 }

@@ -3,12 +3,18 @@ import { Link } from 'react-router-dom'
 
 import projectKtest from '@/assets/images/project-ktest.png'
 import projectMoving from '@/assets/images/project-moving.png'
+import projectMovingEn from '@/assets/images/project-moving-en.png'
 import ticketLine from '@/assets/icons/ticket-line.svg'
 import ticketNotch from '@/assets/icons/ticket-notch.svg'
 
 const TICKET_IMAGE: Record<string, string> = {
   moving: projectMoving,
   'k-test': projectKtest,
+}
+
+// 영문 전용 이미지가 있는 프로젝트만 등록한다. 없으면 기본(국문) 이미지를 쓴다
+const TICKET_IMAGE_EN: Record<string, string> = {
+  moving: projectMovingEn,
 }
 
 export type TicketItem = {
@@ -21,20 +27,30 @@ export type TicketItem = {
 }
 
 export default function ProjectTicket({ item }: { item: TicketItem }) {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const image =
+    (i18n.language !== 'ko' && TICKET_IMAGE_EN[item.id]) || TICKET_IMAGE[item.id]
 
   return (
-    <article className="font-ko text-brand flex w-full flex-col">
-      <div className="bg-cream flex flex-col gap-3.5 rounded-t-3xl p-7">
+    <article className="font-ko text-brand flex h-full w-full flex-col">
+      <div className="bg-cream flex flex-1 flex-col gap-3.5 rounded-t-3xl p-7">
         <img
-          src={TICKET_IMAGE[item.id]}
+          src={image}
           alt={t('featured.imageLabel', { name: item.name })}
           className="aspect-[1200/630] w-full rounded-lg object-cover"
         />
-        <p className="text-[13px] leading-normal font-medium opacity-80 lg:text-[14px]">{item.meta}</p>
-        <p className="text-[28px] leading-[1.3] tracking-[-0.56px] lg:text-[40px] lg:tracking-[-0.8px]">{item.name}</p>
-        <p className="text-[15px] leading-[1.6] tracking-[-0.15px] break-keep lg:text-lg lg:tracking-[-0.18px]">{item.desc}</p>
-        <p className="font-sans text-xs uppercase opacity-70 lg:text-[14px] lg:tracking-[1.12px]">{item.stack}</p>
+        <p className="text-[13px] leading-normal font-medium opacity-80 lg:text-[14px]">
+          {item.meta}
+        </p>
+        <p className="text-[28px] leading-[1.3] tracking-[-0.56px] lg:text-[40px] lg:tracking-[-0.8px]">
+          {item.name}
+        </p>
+        <p className="text-[15px] leading-[1.6] tracking-[-0.15px] break-keep lg:text-lg lg:tracking-[-0.18px]">
+          {item.desc}
+        </p>
+        <p className="font-sans text-xs uppercase opacity-70 lg:text-[14px] lg:tracking-[1.12px]">
+          {item.stack}
+        </p>
       </div>
 
       <div className="bg-cream relative flex h-6 items-center overflow-hidden px-[26px]">
@@ -43,9 +59,11 @@ export default function ProjectTicket({ item }: { item: TicketItem }) {
         <img src={ticketNotch} alt="" className="absolute top-0 -right-3 size-6" />
       </div>
 
-      <div className="bg-cream flex flex-col gap-[18px] rounded-b-3xl p-7">
-        <p className="font-sans text-[14px] tracking-[1.12px] uppercase">{t('featured.keyResults')}</p>
-        <div className="flex flex-col gap-2 lg:flex-row lg:gap-5">
+      <div className="bg-cream flex flex-col gap-[18px] rounded-b-3xl p-7 wide:h-[264px]">
+        <p className="font-sans text-[14px] tracking-[1.12px] uppercase">
+          {t('featured.keyResults')}
+        </p>
+        <div className="flex flex-col gap-2 lg:flex-row lg:gap-5 wide:flex-1">
           {item.stats.map((stat) => (
             <div
               key={stat.label}
