@@ -187,6 +187,11 @@
     "linksLabel": "You can also find me on",
     "copyright": "© Copyright 2026 HYOJU"
   },
+  "notFound": {
+    "title": "Lost your way?",
+    "desc": "The page you're looking for doesn't exist or has moved.",
+    "home": "Back to home"
+  },
   "mobileMenu": {
     "title": "Where<br />to<br />next?",
     "menuLabel": "Menu",

@@ -187,6 +187,11 @@
     "linksLabel": "You can also find me on",
     "copyright": "© Copyright 2026 HYOJU"
   },
+  "notFound": {
+    "title": "길을 잃었어요",
+    "desc": "찾으시는 페이지가 없거나 주소가 바뀌었어요.",
+    "home": "홈으로 가기"
+  },
   "mobileMenu": {
     "title": "Where<br />to<br />next?",
     "menuLabel": "Menu",
